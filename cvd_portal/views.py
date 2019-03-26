@@ -122,7 +122,6 @@ class Login(APIView):
 
         try:
             data = request.data
-            print(data)
         except ParseError as error:
             return Response(
                 'Invalid JSON - {0}'.format(error.detail),
@@ -138,6 +137,7 @@ class Login(APIView):
         password = data['password']
 
         user = authenticate(username=username, password=password)
+        print(user)
         if not user:
             return Response(
                'Username password are not correct',
@@ -174,6 +174,7 @@ class Logout(APIView):
     def get(self, request, format=None):
         try:
             Token.objects.filter(user=request.user).delete()
+            print("lalalalal")
         except ParseError:
             return Response({'status': 'error'})
         return Response({'status': 'done'})
@@ -253,7 +254,7 @@ class DeviceCRUD(APIView):
     def post(self, request, format=None):
         try:
             data = request.data
-            print(data)
+            print("data \n",data)
         except ParseError as error:
             return Response(
                 'Invalid JSON - {0}'.format(error.detail),
@@ -278,17 +279,18 @@ class DeviceCRUD(APIView):
 
         elif data['type'] == 'patient':
             p = Patient.objects.get(pk=int(data['id']))
-            print(p)
+            print("Device crud api : value of p\n",p)
             try:
                 if p.device is not None and data['fcm'] == p.device.id:
                     _id = p.device.id
+                    print("if")
                 else:
                     dev = Device(device_id=data['fcm'])
                     dev.save()
                     p.device = dev
                     p.save()
                     _id = dev.id
-
+                    print("else")
             except:
                 pass
         else:
@@ -326,7 +328,6 @@ class NotificationCRUD(APIView):
 
 class gen_otp(APIView):
     def post(self, request, format=None):
-        print("yo")
         try:
             data = request.data
             print(data)

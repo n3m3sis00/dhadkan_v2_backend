@@ -25,7 +25,7 @@ SECRET_KEY = 'wl-h^c)a!#n6f+&n!hjyq))a#mk8(&rf)#g_485y34yd%fuu_@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['88b72ec6.ngrok.io', 'localhost', '127.0.0.1', '192.168.103.187', 'compbio.iitr.ac.in']
+ALLOWED_HOSTS = ['88b72ec6.ngrok.io', 'localhost', '127.0.0.1', '192.168.103.187', 'compbio.iitr.ac.in', '192.168.103.89','0.0.0.0']
 
 
 # Application definition
@@ -59,7 +59,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ),
+    
 }
 
 FCM_APIKEY = 'AAAAQkMDkEA:APA91bFDkuxSwOQIKmr95_vhWwkpwO5SX4jlSUWaKTY3gxUMiT5qx\
