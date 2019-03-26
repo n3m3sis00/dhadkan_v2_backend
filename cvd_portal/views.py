@@ -463,3 +463,24 @@ class doctor_notification(APIView):
         return JsonResponse(
             response,
             safe=False, content_type='application/json')
+
+
+class Classify(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def post(self,request,format=None):
+        upload = request.FILES['file']
+        fh = tempfile.NamedTemporaryFile(delete=False)
+        extension =  upload.name.split(".")[1]
+        filename = "{}.{}".format(fh.name,extension)
+
+        with BufferedWriter( FileIO( filename, "w" ) ) as dest:
+            for c in upload.chunks():
+                dest.write(c)
+        response = {
+            "message": "Hi there"
+        }
+        return JsonResponse(
+            response,
+            safe=False, content_type='application/json')
