@@ -466,18 +466,17 @@ class doctor_notification(APIView):
 
 
 class Classify(APIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
 
     def post(self,request,format=None):
-        upload = request.FILES['file']
-        fh = tempfile.NamedTemporaryFile(delete=False)
+        print("hi")
+        upload = request.FILES['photo']
+        print(upload.name)
         extension =  upload.name.split(".")[1]
-        filename = "{}.{}".format(fh.name,extension)
+        filename = "{}.{}".format(upload.name,extension)
 
-        with BufferedWriter( FileIO( filename, "w" ) ) as dest:
-            for c in upload.chunks():
-                dest.write(c)
+        with open('upload' + filename, 'wb+') as destination:
+            for chunk in upload.chunks():
+                destination.write(chunk)
         response = {
             "message": "Hi there"
         }
