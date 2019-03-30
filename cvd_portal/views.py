@@ -1,3 +1,5 @@
+import os
+
 from cvd_portal.models import *
 from cvd_portal.serializers import *
 
@@ -472,11 +474,13 @@ class Classify(APIView):
         upload = request.FILES['photo']
         print(upload.name)
         extension =  upload.name.split(".")[1]
-        filename = "{}.{}".format(upload.name,extension)
+        filename = "{}".format(upload.name)
 
         with open('upload' + filename, 'wb+') as destination:
             for chunk in upload.chunks():
                 destination.write(chunk)
+
+        os.system('python ./cvdportal/ocr.py uploadphoto.jpeg')
         response = {
             "message": "Hi there"
         }
