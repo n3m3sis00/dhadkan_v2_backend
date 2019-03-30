@@ -38,11 +38,11 @@ img = cv2.imread(sys.argv[1])
 font = cv2.FONT_HERSHEY_SIMPLEX
 for i in range(len(final_dict)):
     cv2.rectangle(img, (int(final_dict[i]['Left']), int(final_dict[i]['Top'])), (int(final_dict[i]['Left']+final_dict[i]['Width']), int(final_dict[i]['Top']+final_dict[i]['Height'])), (255,20,0), 2)
-    cv2.putText(img,final_dict[i]["WordText"],(int(final_dict[i]['Left']),int(final_dict[i]['Top'])), font, 1,(255,0,255),2,cv2.LINE_AA)
+    cv2.putText(img,final_dict[i]["WordText"].encode('utf-8').strip(),(int(final_dict[i]['Left']),int(final_dict[i]['Top'])), font, 1,(255,0,255),2,cv2.LINE_AA)
 
 
-cv2.imshow('OCR Output',img)
-cv2.waitKey(0)
+cv2.imwrite('/Users/deepak/Desktop/output.jpeg',img)
+
 print(test_file)
 print(len(test_file['ParsedResults'][0]['TextOverlay']))
 print(final_dict[0])

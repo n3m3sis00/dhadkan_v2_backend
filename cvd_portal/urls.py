@@ -2,7 +2,7 @@ from django.conf.urls import url
 from rest_framework.authtoken import views
 from cvd_portal.views import *
 urlpatterns = [
-    #Classifiaction
+    #Classification
     url(r'api/classify$', Classify.as_view()),
     #view patient data get
     url(r'api/patient/(?P<pk>[0-9]+)$', PatientDetail.as_view()),

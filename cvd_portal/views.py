@@ -480,7 +480,7 @@ class Classify(APIView):
             for chunk in upload.chunks():
                 destination.write(chunk)
 
-        os.system('python ./cvdportal/ocr.py uploadphoto.jpeg')
+        os.system('python ./cvd_portal/ocr.py uploadphoto.jpeg')
         response = {
             "message": "Hi there"
         }
