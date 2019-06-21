@@ -1,0 +1,82 @@
+Paracetamol.
+Ibuprofen.
+Co-codamol (paracetamol and codeine mix)
+Codeine.
+Tramadol.
+Morphine.
+Diclofenac.
+Asprin.
+Naproxen.
+Dihydrocodeine.
+Oxycodone.
+Nefopam.
+Gabapentin.
+Fentanyl.
+Ketamine.
+Bisoprolol.
+Atenolol.
+Digoxin.
+Amiodarone.
+Adenosine.
+Diltiazem.
+Amoxicillin.
+Flucloxacillin.
+Meropenem.
+Vancomycin.
+Gentamycin.
+Clarithromycin.
+Co-amoxiclav.
+Doxycycline.
+Ceftazidime.
+Piperacillin / Tazobactam (tazocin).
+Ciprofloxacin.
+Levofloxacin.
+Cephalexin.
+Cefuroxime.
+Clindamycin.
+Trimethoprim.
+Nitrofurantoin.
+Warfarin.
+Rivaroxaban.
+Apixaban.
+Enoxaparin.
+Funderparinex.
+Heparin.
+Sodium valproate (Epilim).
+Phenytoin.
+Levetiracetam (Keppra).
+Gabapentin.
+Clonazepam
+Diazapam.
+Lorazepam.
+Carbamazepine.
+Citalopram.
+Fluoxetine.
+Amitriptyline.
+Sertraline.
+Venlafaxine.
+Mirtazapine.
+Trazodone.
+Ramipril.
+Doxazosin.
+Candesartan.
+Losartan.
+Lisinopril.
+Atenolol.
+Bisoprolol.
+Amlodipine.
+Diltiazem.
+Nifedipine.
+Levothyroxine
+Adcal / Calcichew.
+Ferrous Fumarate.
+Ferrous Sulphate.
+Multivitamins.
+Thiamine.
+Cholecalciferol.
+Quinine.
+Folic Acid.
+Sandoz-K
+Sandoz-Phosphate
+Slow sodium.
+Alendronic Acid.
