@@ -75,3 +75,64 @@ def check(request):
             send_message(p_id, None, patient_message)
             Notifications(text=doc_message, doctor=p.doctor).save()
             Notifications(text=patient_message, patient=p).save()
+
+
+def gen_abcd_message(medicines):
+    response_data = []
+    user_data = {
+        "extra_med" : [],
+        'a':[],
+        'b':[],
+        'c':[],
+        'd':[]
+    }
+    medicine_ = {
+        "Paracetamol" : "a",
+        "Ibuprofen":"b",
+        "Cocodamol" : "c",
+        "Codeine" : "d",
+        "Tramadol":"a",
+        "Morphine":"d",
+        "Diclofenac":"b",
+        "Asprin" : "c",
+        "Naproxen" : "d",
+        "Dihydrocodeine":"a",
+        "Oxycodone":"d"
+    }
+    for medicine in medicines:
+        if list(medicine_.keys()).count(medicine) == 0:
+            user_data['extra_med'].append(medicine)
+
+        else:
+            user_data[medicine_[medicine]].append(medicine)
+
+    for key,value in user_data.items():
+        if len(value) == 0:
+            if key == "extra_med":
+                continue
+            response_data.append("Type "+ key + " medicine missing")
+        elif key == "extra_med":
+            response_data.append("Extra Medicines given: " + str(value))
+        else:
+            response_data.append("please Resend the data")
+
+    return response_data
+
+def send_abcd_notification(data,mobile):
+    timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)
+    print(mobile)
+    print(type(mobile))
+    p = Patient.objects.get(mobile=int(mobile))
+
+    response_ = gen_abcd_message(data)
+
+    if(len(response_) == 0):
+        return
+    else:
+        d_id = p.doctor.device.device_id
+        p_id = p.device.device_id
+        send_message(d_id, None, response_)
+        patient_message = response_
+        send_message(p_id, None, patient_message)
+        Notifications(text=patient_message, doctor=p.doctor).save()
+        Notifications(text=patient_message, patient=p).save()
