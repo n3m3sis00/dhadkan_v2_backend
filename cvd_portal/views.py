@@ -20,6 +20,7 @@ from cvd_portal.inform import check
 from cvd_portal.fcm import send_message
 
 from random import randint
+from .inform import send_abcd_notification
 
 
 class PatientDataCreate(generics.CreateAPIView):
@@ -472,7 +473,8 @@ class Classify(APIView):
     def post(self,request,format=None):
         print("hi")
         upload = request.FILES['photo']
-        print(upload.name)
+        medicine = request.POST['medicine']
+
         extension =  upload.name.split(".")[1]
         filename = "{}".format(upload.name)
 
@@ -480,9 +482,14 @@ class Classify(APIView):
             for chunk in upload.chunks():
                 destination.write(chunk)
 
-        os.system('python ./cvd_portal/ocr.py uploadphoto.jpeg')
+        data_ = medicine.split(",")
+        mobile_ = request.POST['mobile']
+        print(mobile_)
+
+        send_abcd_notification(data_, mobile_)
+        # os.system('python ./cvd_portal/ocr.py uploadphoto.jpeg')
         response = {
-            "message": "Hi there"
+            "text_upload": "Hi there"
         }
         return JsonResponse(
             response,
