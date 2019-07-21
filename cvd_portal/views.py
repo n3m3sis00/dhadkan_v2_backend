@@ -163,7 +163,6 @@ class Login(APIView):
                     status=status.HTTP_401_UNAUTHORIZED
                 )
 
-        Token.objects.filter(user=user).delete()
         token = Token.objects.get_or_create(user=user)
         response['Token'] = token[0].key
         return JsonResponse(
@@ -487,7 +486,6 @@ class Classify(APIView):
         print(mobile_)
 
         send_abcd_notification(data_, mobile_)
-        # os.system('python ./cvd_portal/ocr.py uploadphoto.jpeg')
         response = {
             "text_upload": "Hi there"
         }

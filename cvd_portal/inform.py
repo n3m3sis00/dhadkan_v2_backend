@@ -1,7 +1,7 @@
 from cvd_portal.models import Patient, PatientData, Notifications
 from cvd_portal.fcm import send_message
 import datetime
-
+import os
 #change_observed = [False, False, False, False]
 
 
@@ -116,9 +116,12 @@ def gen_abcd_message(medicines):
         else:
             response_data.append("")
 
-    strins_response = ", ".join([x for x in response_data])
+    data_ocr = os.system('python /dhadkan_v3_backend-0.0.2/cvd_portal/ocr.py uploadphoto.jpeg')
 
-    return strins_response
+
+    strins_response = "\n".join([ x for x in response_data])
+
+    return strins_response,data_ocr
 
 def send_abcd_notification(data,mobile):
     timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)
@@ -126,7 +129,7 @@ def send_abcd_notification(data,mobile):
     print(type(mobile))
     p = Patient.objects.get(mobile=int(mobile))
 
-    response_ = gen_abcd_message(data)
+    response_,response_ocr = gen_abcd_message(data)
     print(response_)
 
     if(len(response_) == 0):
@@ -139,3 +142,5 @@ def send_abcd_notification(data,mobile):
         send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()
         Notifications(text=patient_message, patient=p).save()
+        Notifications(text=response_ocr, doctor=p.doctor).save()
+        Notifications(text=response_ocr, patient=p).save()
