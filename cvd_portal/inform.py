@@ -2,6 +2,7 @@ from cvd_portal.models import Patient, PatientData, Notifications
 from cvd_portal.fcm import send_message
 import datetime
 import os
+from .ocr import ocr_space_file_
 #change_observed = [False, False, False, False]
 
 
@@ -116,7 +117,8 @@ def gen_abcd_message(medicines):
         else:
             response_data.append("")
 
-    data_ocr = os.system('python /dhadkan_v3_backend-0.0.2/cvd_portal/ocr.py uploadphoto.jpeg')
+    data_ocr = ocr_space_file_()
+    print(data_ocr)
 
 
     strins_response = "\n".join([ x for x in response_data])
@@ -138,9 +140,7 @@ def send_abcd_notification(data,mobile):
         d_id = p.doctor.device.device_id
         p_id = p.device.device_id
         send_message(d_id, None, response_)
-        patient_message = response_
+        patient_message = response_ + "\n---------------------------------------------------\n" +response_ocr
         send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()
         Notifications(text=patient_message, patient=p).save()
-        Notifications(text=response_ocr, doctor=p.doctor).save()
-        Notifications(text=response_ocr, patient=p).save()
