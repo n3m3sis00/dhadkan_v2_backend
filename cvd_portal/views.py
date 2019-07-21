@@ -477,7 +477,7 @@ class Classify(APIView):
         extension =  upload.name.split(".")[1]
         filename = "{}".format(upload.name)
 
-        with open('upload' + filename, 'wb+') as destination:
+        with open("/dhadkan_v3_backend-0.0.2/"+filename, 'wb+') as destination:
             for chunk in upload.chunks():
                 destination.write(chunk)
 

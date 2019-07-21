@@ -3,10 +3,10 @@ import requests
 import cv2
 
 
-def ocr_space_file(filename = sys.argv[1], overlay=True, api_key='helloworld', language='eng'):
+def ocr_space_file(filename, overlay=True, api_key='helloworld', language='eng'):
 
 
-    payload = {'isOverlayRequired': overlay,
+    payload = {
                'apikey': '3047397b1388957',
                'language': language,
                }
@@ -17,23 +17,28 @@ def ocr_space_file(filename = sys.argv[1], overlay=True, api_key='helloworld', l
                           )
     test_file =  r.json()
 
-    final_dict = []
-    for i in test_file['ParsedResults'][0]['TextOverlay']['Lines']:
-        if len(i["Words"][0]) == 1:
-            final_dict.append(i["Words"][0])
-
-        else:
-            for j in i["Words"]:
-                final_dict.append(j)
-
-
-    data_response = []
-    for i in range(len(final_dict)):
-        data_response.append(final_dict[i]["WordText"].encode('utf-8').strip())
-
-    return data_response
+    # final_dict = []
+    # for i in test_file['ParsedResults'][0]['TextOverlay']['Lines']:
+    #     if len(i["Words"][0]) == 1:
+    #         final_dict.append(i["Words"][0])
+    #
+    #     else:
+    #         for j in i["Words"]:
+    #             final_dict.append(j)
 
 
+    # data_response = []
+    # print(final_dict)
+    # for i in range(len(final_dict)):
+    #     data_response.append(final_dict[i]["WordText"].encode('utf-8').strip())
+
+    return test_file['ParsedResults'][0]['ParsedText'].encode('utf-8').strip()
+
+def ocr_space_file_():
+    data = ocr_space_file(filename = "/dhadkan_v3_backend-0.0.2/photo.jpeg")
+    return data
+
+# print(ocr_space_file_())
 
 # img = cv2.imread(sys.argv[1])
 # font = cv2.FONT_HERSHEY_SIMPLEX
