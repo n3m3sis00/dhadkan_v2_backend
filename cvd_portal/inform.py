@@ -131,16 +131,23 @@ def send_abcd_notification(data,mobile):
     print(type(mobile))
     p = Patient.objects.get(mobile=int(mobile))
 
+    print("------------------")
+    print(p)
+    print(p.name)
+    print(p.doctor)
+    print("-----------------")
+
     response_,response_ocr = gen_abcd_message(data)
     print(response_)
 
     if(len(response_) == 0):
         return
     else:
-        d_id = p.doctor.device.device_id
-        p_id = p.device.device_id
-        send_message(d_id, None, response_)
-        patient_message = response_ + "\n---------------------------------------------------\n" +response_ocr
-        send_message(p_id, None, patient_message)
+        # d_id = p.doctor.device.device_id
+        # p_id = p.device.device_id
+        # send_message(d_id, None, response_)
+        patient_message = response_ + "\n---------------------------------------------------\n" + response_ocr
+        print(patient_message)
+        # send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()
         Notifications(text=patient_message, patient=p).save()

@@ -435,6 +435,9 @@ class patient_notification(APIView):
     def get(self, request, pk, format=None):
         p = Patient.objects.get(pk=pk)
         nl = Notifications.objects.filter(patient=p).order_by('-time_stamp')
+        print(nl)
+        print(p)
+        print(p.name)
         response = {
             "notifications": []
         }
