@@ -114,9 +114,11 @@ def gen_abcd_message(medicines):
         elif key == "extra_med":
             response_data.append("Extra Medicines given: " + str(value))
         else:
-            response_data.append("please Resend the data")
+            response_data.append("")
 
-    return response_data
+    strins_response = ", ".join([x for x in response_data])
+
+    return strins_response
 
 def send_abcd_notification(data,mobile):
     timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)
@@ -125,6 +127,7 @@ def send_abcd_notification(data,mobile):
     p = Patient.objects.get(mobile=int(mobile))
 
     response_ = gen_abcd_message(data)
+    print(response_)
 
     if(len(response_) == 0):
         return
