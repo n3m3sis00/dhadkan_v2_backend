@@ -6,6 +6,7 @@ from cvd_portal.serializers import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
+from django.utils.datastructures import MultiValueDictKeyError
 
 from rest_framework.exceptions import ParseError
 from rest_framework import generics
@@ -473,22 +474,34 @@ class doctor_notification(APIView):
 class Classify(APIView):
 
     def post(self,request,format=None):
-        print("hi")
-        upload = request.FILES['photo']
-        medicine = request.POST['medicine']
+        print("hi____________________________")
+        print(request.POST['medicine'])
+        try:
+            upload = request.FILES['photo']
+            extension =  upload.name.split(".")[1]
+            filename = "{}".format(upload.name)
+            mobile_ = request.POST['mobile']
 
-        extension =  upload.name.split(".")[1]
-        filename = "{}".format(upload.name)
+            with open("/dhadkan_v3_backend-0.0.2/"+filename, 'wb+') as destination:
+                for chunk in upload.chunks():
+                    destination.write(chunk)
 
-        with open("/dhadkan_v3_backend-0.0.2/"+filename, 'wb+') as destination:
-            for chunk in upload.chunks():
-                destination.write(chunk)
+            send_abcd_notification([], mobile_)
 
-        data_ = medicine.split(",")
-        mobile_ = request.POST['mobile']
-        print(mobile_)
 
-        send_abcd_notification(data_, mobile_)
+        except MultiValueDictKeyError:
+            print("no medicine photo ")
+
+        try:
+            medicine = request.POST['medicine']
+            data_ = medicine.split(",")
+            mobile_ = request.POST['mobile']
+            print(mobile_)
+            send_abcd_notification(data_, mobile_)
+            print("Medicine name Given")
+        except MultiValueDictKeyError:
+            print("no medicine name")
+
         response = {
             "text_upload": "Hi there"
         }
