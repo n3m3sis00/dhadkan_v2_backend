@@ -136,9 +136,10 @@ def send_abcd_notification(data,mobile):
     print(p.name)
     print(p.doctor)
     print("-----------------")
-
-    response_,response_ocr = gen_abcd_message(data)
-    print(response_)
+    response_ = ""
+    if data != []:
+        response_,response_ocr = gen_abcd_message(data)
+        print(response_)
 
     if(len(response_) == 0):
         return
