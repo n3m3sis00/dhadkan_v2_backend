@@ -69,11 +69,11 @@ def check(request):
         if(doc_message is None):
             return
         else:
-            d_id = p.doctor.device.device_id
-            p_id = p.device.device_id
-            send_message(d_id, None, doc_message)
+            # d_id = p.doctor.device.device_id
+            # p_id = p.device.device_id
+            # send_message(d_id, None, doc_message)
             patient_message = "Please visit nearest OPD"
-            send_message(p_id, None, patient_message)
+            # send_message(p_id, None, patient_message)
             Notifications(text=doc_message, doctor=p.doctor).save()
             Notifications(text=patient_message, patient=p).save()
 

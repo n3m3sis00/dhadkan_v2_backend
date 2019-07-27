@@ -323,7 +323,7 @@ class NotificationCRUD(APIView):
         msg = data['message']
         _to = data['to']
         _from = data['from']
-        response['response'] = send_message(_to, _from, msg)
+        # response['response'] = send_message(_to, _from, msg)
         Notifications(text=msg, patient=p).save()
         return JsonResponse(
             response, safe=False, content_type='application/json')
