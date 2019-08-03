@@ -95,3 +95,17 @@ class Notifications(models.Model):
             return self.doctor.name + " : " + self.text
         else:
             return self.patient.name + " : " + self.text
+
+class Medicine(models.Model):
+    text = models.TextField()
+    patient = models.ForeignKey(
+        Patient, null=True, blank=True)
+    doctor = models.ForeignKey(
+        Doctor, null=True, blank=True)
+    time_stamp = CustomDateTimeField(default=datetime.datetime.now)
+
+    def __str__(self):
+        if(self.patient is None):
+            return self.doctor.name + " : " + self.text
+        else:
+            return self.patient.name + " : " + self.text

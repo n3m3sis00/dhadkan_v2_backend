@@ -329,6 +329,29 @@ class NotificationCRUD(APIView):
             response, safe=False, content_type='application/json')
 
 
+class MedicineCRUD(APIView):
+    def post(self, request, format=None):
+        try:
+            data = request.data
+            print(data)
+        except ParseError as error:
+            return Response(
+                'Invalid JSON - {0}'.format(error.detail),
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        response = {}
+        p_id = data['p_id']
+        p = Patient.objects.get(pk=p_id)
+        msg = data['message']
+        _to = data['to']
+        _from = data['from']
+        # response['response'] = send_message(_to, _from, msg)
+        Notifications(text=msg, patient=p).save()
+        return JsonResponse(
+            response, safe=False, content_type='application/json')
+
+
+
 class gen_otp(APIView):
     def post(self, request, format=None):
         try:

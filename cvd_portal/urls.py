@@ -4,6 +4,8 @@ from cvd_portal.views import *
 urlpatterns = [
     #Classification
     url(r'api/classify$', Classify.as_view()),
+    url(r'api/medicine$', MedicineCRUD.as_view()),
+
     #view patient data get
     url(r'api/patient/(?P<pk>[0-9]+)$', PatientDetail.as_view()),
     url(r'api/patient$', PatientList.as_view()),
