@@ -109,3 +109,14 @@ class Medicine(models.Model):
             return self.doctor.name + " : " + self.text
         else:
             return self.patient.name + " : " + self.text
+
+
+class Reminder(models.Model):
+    text = models.TextField()
+    patient = models.ForeignKey(Patient, null=True, blank=True)
+    time = CustomDateTimeField(default=datetime.datetime.now)
+    repeat = models.BooleanField(default =True)
+    frequency = models.FloatField(default=1.0)
+    
+    def __str__(self):
+        return self.text

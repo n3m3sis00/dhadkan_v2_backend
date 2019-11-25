@@ -22,7 +22,7 @@ from cvd_portal.fcm_d import send_message
 
 from random import randint
 from .inform import send_abcd_notification
-
+from datetime import datetime
 
 class PatientDataCreate(generics.CreateAPIView):
     authentication_classes = (TokenAuthentication,)
@@ -531,3 +531,49 @@ class Classify(APIView):
         return JsonResponse(
             response,
             safe=False, content_type='application/json')
+
+class Remind(APIView):
+
+    def post(self,request,format=None):
+        try:
+            data = request.data
+            print(data)
+        except ParseError:
+            return JsonResponse({"message":"please set it again"}, safe=False, content_type='application/json')
+
+        text = data['text']
+        print(data["date"])
+        time = datetime.strptime(data["date"], "%d/%m/%Y") 
+        print(time)
+        user = Patient.objects.get(pk=int(data["pk"]))
+        repeat = data["repeat"]
+        freq = data["frequency"]
+
+        rem = Reminder(text = text, patient=user, repeat = repeat, time = time, frequency = freq)
+        rem.save()
+        return JsonResponse({"message":"Reminder scheduled"}, safe=False, content_type='application/json')
+
+
+class PatientReminder(APIView):
+
+    def post(self,request,format=None):
+        try:
+            data = request.data
+        except ParseError:
+            print("something is wrong")
+            return JsonResponse({"message":"please try again"}, safe=False, content_type="application/json")
+
+        pat = Patient.objects.get(pk = int(data["pk"]))
+
+        reminders = Reminder.objects.filter(patient = pat)
+        context = []
+        for rem in reminders:
+            context.append({
+                "text":rem.text,
+                "date":rem.time,
+                "id":rem.id
+                })
+
+        return JsonResponse({"message":context},safe=False, content_type="application/json")
+
+

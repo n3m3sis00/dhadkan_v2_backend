@@ -25,7 +25,7 @@ SECRET_KEY = 'wl-h^c)a!#n6f+&n!hjyq))a#mk8(&rf)#g_485y34yd%fuu_@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['88b72ec6.ngrok.io','dkumar.iitr.ac.in','10.54.1.47', 'localhost', '127.0.0.1', '192.168.103.187', 'compbio.iitr.ac.in', '192.168.103.89','0.0.0.0','10.0.2.2']
+ALLOWED_HOSTS = ['88b72ec6.ngrok.io','dkumar.iitr.ac.in','10.54.1.35', 'localhost', '127.0.0.1', '192.168.103.187', 'compbio.iitr.ac.in', '192.168.103.89','0.0.0.0','10.0.2.2']
 
 
 # Application definition
