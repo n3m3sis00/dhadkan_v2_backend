@@ -18,7 +18,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
 from cvd_portal.inform import check
-from cvd_portal.fcm import send_message
+from cvd_portal.fcm_d import send_message
 
 from random import randint
 from .inform import send_abcd_notification
@@ -345,7 +345,7 @@ class MedicineCRUD(APIView):
         msg = data['message']
         _to = data['to']
         _from = data['from']
-        # response['response'] = send_message(_to, _from, msg)
+        response['response'] = send_message(_to, _from, msg)
         Notifications(text=msg, patient=p).save()
         return JsonResponse(
             response, safe=False, content_type='application/json')

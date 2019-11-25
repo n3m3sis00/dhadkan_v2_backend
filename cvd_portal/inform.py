@@ -1,5 +1,5 @@
 from cvd_portal.models import Patient, PatientData, Notifications
-from cvd_portal.fcm import send_message
+from cvd_portal.fcm_d import send_message
 import datetime
 import os
 from .ocr import ocr_space_file_
@@ -69,11 +69,11 @@ def check(request):
         if(doc_message is None):
             return
         else:
-            # d_id = p.doctor.device.device_id
-            # p_id = p.device.device_id
-            # send_message(d_id, None, doc_message)
+            d_id = p.doctor.device.device_id
+            p_id = p.device.device_id
+            send_message(d_id, None, doc_message)
             patient_message = "Please visit nearest OPD"
-            # send_message(p_id, None, patient_message)
+            send_message(p_id, None, patient_message)
             Notifications(text=doc_message, doctor=p.doctor).save()
             Notifications(text=patient_message, patient=p).save()
 
@@ -144,11 +144,11 @@ def send_abcd_notification(data,mobile):
     if(len(response_) == 0):
         return
     else:
-        # d_id = p.doctor.device.device_id
-        # p_id = p.device.device_id
-        # send_message(d_id, None, response_)
+        d_id = p.doctor.device.device_id
+        p_id = p.device.device_id
+        send_message(d_id, None, response_)
         patient_message = response_ + "\n---------------------------------------------------\n" + response_ocr
         print(patient_message)
-        # send_message(p_id, None, patient_message)
+        send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()
         Notifications(text=patient_message, patient=p).save()
