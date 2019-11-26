@@ -32,7 +32,7 @@ def ocr_space_file(filename, overlay=True, api_key='helloworld', language='eng')
     # for i in range(len(final_dict)):
     #     data_response.append(final_dict[i]["WordText"].encode('utf-8').strip())
 
-    return test_file['ParsedResults'][0]['ParsedText']
+    return test_file['ParsedResults'][0]['ParsedText'].replace("\r", "").split("\n")
 
 def ocr_space_file_():
     data = ocr_space_file(filename = "/dhadkan_v3_backend-0.0.2/photo.jpeg")

@@ -17,7 +17,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from cvd_portal.inform import check
+from cvd_portal.inform import check, send_ocr_notification
 from cvd_portal.fcm_d import send_message
 
 from random import randint
@@ -494,26 +494,31 @@ class doctor_notification(APIView):
             safe=False, content_type='application/json')
 
 
-class Classify(APIView):
-
-    def post(self,request,format=None):
-        print("hi____________________________")
-        print(request.POST['medicine'])
+class Ocr(APIView):
+    def post(self,request, format=None):
         try:
+            
             upload = request.FILES['photo']
             extension =  upload.name.split(".")[1]
             filename = "{}".format(upload.name)
             mobile_ = request.POST['mobile']
 
-            with open("/dhadkan_v3_backend-0.0.2/"+filename, 'wb+') as destination:
+            with open("/dhadkan_v3_backend-0.0.2/" + filename, 'wb+') as destination:
                 for chunk in upload.chunks():
                     destination.write(chunk)
 
-            send_abcd_notification([], mobile_)
+            send_ocr_notification(mobile_)
 
+            return JsonResponse({"message": "please check notification or alert"} , safe=False, content_type="application/json")
 
-        except MultiValueDictKeyError:
-            print("no medicine photo ")
+        except:
+            return JsonResponse({"message": "please try again"} , safe=False, content_type="application/json") 
+
+class Classify(APIView):
+
+    def post(self,request,format=None):
+        print("hi____________________________")
+        print(request.POST['medicine'])
 
         try:
             medicine = request.POST['medicine']

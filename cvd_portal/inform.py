@@ -3,6 +3,8 @@ from cvd_portal.fcm_d import send_message
 import datetime
 import os
 from .ocr import ocr_space_file_
+
+import difflib
 #change_observed = [False, False, False, False]
 
 
@@ -117,13 +119,112 @@ def gen_abcd_message(medicines):
         else:
             response_data.append("")
 
-    data_ocr = ocr_space_file_()
-    print(data_ocr)
-
 
     strins_response = "\n".join([ x for x in response_data])
 
-    return strins_response,data_ocr
+    return strins_response
+
+def get_parsed_ocr_results(data):
+    
+    message = ""
+    
+    with open('/dhadkan_v3_backend-0.0.2/cvd_portal/medicine.txt', 'r') as med_file:
+        medicines = med_file.readlines()
+        
+        found_med_name = []
+        found_med_name_prob = []
+        database_med = []
+        for i in medicines:
+            close_match = difflib.get_close_matches(i.replace("\n", ""), data)
+            
+            if len(close_match) != 0:
+                database_med.append(i)
+                found_med_name.append(close_match[0])
+            else:
+                continue
+
+
+            #try:
+            #    if len(i) <= len(close_match[0]):
+            #        notfound = 0
+            #        for counter, j in enumerate(i):
+            #            if j != close_match(counter[0]):
+            #                notfound +=1
+            #            else:
+            #                continue
+            #        database_med.append(i)
+            #        found_med_name.append(close_match[0])
+            #        found_med_name_prob.append((len(i) - notfound)/len(i))
+            
+            #    else:
+            #        notfound = 0
+            #        for counter, j in enumerate(close_match[0]):
+            #            if j != i[counter]:
+            #                notfound += 1
+            #            else:
+            #                continue
+                
+            #        database_med.append(i)
+            #        found_med_name.append(close_match[0])
+            #        print(notfound)
+            #        print(close_match)
+            #        print(i)
+            #        found_med_name_prob.append((len(close_match[0]) - notfound)/len(close_match[0]))
+            #except:
+            #    continue
+
+      
+        if len(found_med_name) != 0:
+            print("hi from true")
+            print(found_med_name)
+            print(database_med)
+            
+            found_med_name = list(set(found_med_name))
+            data_base_med = [x.replace("\n","") for x in database_med]
+            #print(found_med_name_prob)
+            #m = max(found_med_name_prob)
+            #locations = [x for x, y in enumerate(found_med_name_prob) if y == m]
+            
+            print(data_base_med, found_med_name)
+            extracted_name = ", ".join(found_med_name)
+            expected_name = ", ".join(data_base_med)
+            
+            print(expected_name)
+
+            message = "Extracted Name: " + extracted_name + "\nExpacted Name: " + expected_name  
+
+            print(message)       
+
+            return True, message
+        else:
+            print("hi from false")
+            return False, "No data"
+        
+def send_ocr_notification(mobile):
+    print("hi from ocr notification")
+    p = Patient.objects.get(mobile= int(mobile))
+
+    p_id = p.device.device_id
+    d_id = p.doctor.device.device_id
+    
+    data_ocr = ocr_space_file_()
+    data_ocr_ = [x.lower() for x in data_ocr]
+    print(data_ocr)
+    ismessage, message = get_parsed_ocr_results(data_ocr_)
+    print(ismessage, message)    
+    print(p.name)
+    doc_message = p.name + "\n\n" + message
+
+    if ismessage:
+        send_message(d_id, None, doc_message)
+        send_message(p_id, None, message)
+
+        Notifications(text=doc_message, doctor=p.doctor).save()
+        Notifications(text=message, patient=p).save()
+    else:
+        
+        send_message(p_id, None, "Please send a clear image\n\n Parse results are:\n" + " ".join(data_ocr))
+    return True
 
 def send_abcd_notification(data,mobile):
     timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)
@@ -138,7 +239,7 @@ def send_abcd_notification(data,mobile):
     print("-----------------")
     response_ = ""
     if data != []:
-        response_,response_ocr = gen_abcd_message(data)
+        response_ = gen_abcd_message(data)
         print(response_)
 
     if(len(response_) == 0):
@@ -147,7 +248,7 @@ def send_abcd_notification(data,mobile):
         d_id = p.doctor.device.device_id
         p_id = p.device.device_id
         send_message(d_id, None, response_)
-        patient_message = response_ + "\n---------------------------------------------------\n" + response_ocr
+        patient_message = response_ 
         print(patient_message)
         send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()

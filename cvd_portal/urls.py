@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'api/reminder$', Remind.as_view()),
     url(r'api/getreminders$', PatientReminder.as_view()),
     url(r'api/delreminder$', DelReminder.as_view()),
+    url(r'api/ocr$', Ocr.as_view()),
 
     #view patient data get
     url(r'api/patient/(?P<pk>[0-9]+)$', PatientDetail.as_view()),
