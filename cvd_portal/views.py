@@ -543,7 +543,13 @@ class Remind(APIView):
 
         text = data['text']
         print(data["date"])
-        time = datetime.strptime(data["date"], "%d/%m/%Y") 
+        time_2 = data["time"]
+        hour = time_2["hour"]
+        min_ = time_2["min"]
+        
+        time_str = data["date"]+"/"+ str(hour) + "/" + str(min_)
+        
+        time = datetime.strptime(time_str, "%d/%m/%Y/%H/%M") 
         print(time)
         user = Patient.objects.get(pk=int(data["pk"]))
         repeat = data["repeat"]
@@ -577,3 +583,19 @@ class PatientReminder(APIView):
         return JsonResponse({"message":context},safe=False, content_type="application/json")
 
 
+
+
+class DelReminder(APIView):
+
+    def post(self, request, format=None):
+        try:
+            data = request.data
+        except ParseError:
+            return JsonResponse({"message":"please try agin"}, safe= False, content_type="application/json")
+
+
+        rem = Reminder.objects.get(pk = int(data["pk"]))
+        text = rem.text
+        rem.delete()
+
+        return JsonResponse({"message":text}, safe=False, content_type = "application/json")
