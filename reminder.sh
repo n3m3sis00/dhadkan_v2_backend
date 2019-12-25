@@ -1,5 +1,5 @@
-cd /dhadkan_v3_backend-0.0.2/
+source /home/dhadkan/shreya_dhadkan/version3/env/bin/activate
 
-python reminder.py
+python /home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py
 
 

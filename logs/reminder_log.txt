@@ -1,0 +1,205 @@
+{
+  "name": "projects/my-dhadkan/messages/0:1576799823065126%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:27:03.139119
+{
+  "name": "projects/my-dhadkan/messages/0:1576799823564679%accfa164accfa164"
+}
+
+Notification send to : Durgesh Kumar 2019-12-20 05:27:03.618463
+{
+  "name": "projects/my-dhadkan/messages/0:1576799882641487%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:28:02.706449
+{
+  "name": "projects/my-dhadkan/messages/0:1576799943700630%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:29:03.777292
+{
+  "name": "projects/my-dhadkan/messages/0:1576800003001645%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:30:03.077069
+{
+  "name": "projects/my-dhadkan/messages/0:1576800062088019%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:31:02.161470
+{
+  "name": "projects/my-dhadkan/messages/0:1576800122396745%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:32:02.464134
+{
+  "name": "projects/my-dhadkan/messages/0:1576800124097221%accfa164accfa164"
+}
+
+Notification send to : Durgesh Kumar 2019-12-20 05:32:04.160152
+{
+  "name": "projects/my-dhadkan/messages/0:1576800182181010%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:33:02.247708
+{
+  "name": "projects/my-dhadkan/messages/0:1576800242268987%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:34:02.323114
+{
+  "name": "projects/my-dhadkan/messages/0:1576800302679038%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:35:02.731056
+{
+  "name": "projects/my-dhadkan/messages/0:1576800362754740%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:36:02.830435
+{
+  "name": "projects/my-dhadkan/messages/0:1576800422857988%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:37:02.916167
+{
+  "name": "projects/my-dhadkan/messages/0:1576800482547787%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 05:38:02.611818
+{
+  "name": "projects/my-dhadkan/messages/0:1576800722272452%accfa164accfa164"
+}
+
+Notification send to : Durgesh Kumar 2019-12-20 05:42:02.335552
+{
+  "name": "projects/my-dhadkan/messages/0:1576827602252640%accfa164accfa164"
+}
+
+Notification send to : pat pae 2019-12-20 13:10:02.307159
+{
+  "name": "projects/my-dhadkan/messages/0:1576828202730856%accfa164accfa164"
+}
+
+Notification send to : pat pae 2019-12-20 13:20:02.803297
+{
+  "name": "projects/my-dhadkan/messages/0:1576842003354626%accfa164accfa164"
+}
+
+Notification send to : Shreya Srivastava 2019-12-20 17:10:03.423977
+{
+  "name": "projects/my-dhadkan/messages/0:1576848602893916%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-20 19:00:02.966801
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-21 08:00:04.048805
+{
+  "name": "projects/my-dhadkan/messages/0:1576935002876360%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-21 19:00:02.950805
+{
+  "name": "projects/my-dhadkan/messages/0:1576944603466838%accfa164accfa164"
+}
+
+Notification send to : pat pae 2019-12-21 21:40:03.534257
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-22 08:00:02.713418
+{
+  "name": "projects/my-dhadkan/messages/0:1577021403351933%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-22 19:00:03.406726
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-23 08:00:02.384927
+{
+  "name": "projects/my-dhadkan/messages/0:1577107802251321%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-23 19:00:02.355809
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-24 08:00:02.916608
+{
+  "name": "projects/my-dhadkan/messages/0:1577194202608047%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-24 19:00:02.679862
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-25 08:00:02.772724
+{
+  "name": "projects/my-dhadkan/messages/0:1577262602285989%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-25 14:00:02.384552
+{
+  "name": "projects/my-dhadkan/messages/0:1577280603069258%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-25 19:00:03.140671

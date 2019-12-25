@@ -44,5 +44,3 @@ def notify():
 if __name__ == "__main__" :
     notify()
 
-
-print("not main")

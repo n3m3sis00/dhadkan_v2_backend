@@ -35,7 +35,7 @@ def ocr_space_file(filename, overlay=True, api_key='helloworld', language='eng')
     return test_file['ParsedResults'][0]['ParsedText'].replace("\r", "").split("\n")
 
 def ocr_space_file_():
-    data = ocr_space_file(filename = "/dhadkan_v3_backend-0.0.2/photo.jpeg")
+    data = ocr_space_file(filename = "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/photo.jpeg")
     return data
 
 # print(ocr_space_file_())

@@ -128,7 +128,7 @@ def get_parsed_ocr_results(data):
     
     message = ""
     
-    with open('/dhadkan_v3_backend-0.0.2/cvd_portal/medicine.txt', 'r') as med_file:
+    with open('/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/medicine.txt', 'r') as med_file:
         medicines = med_file.readlines()
         
         found_med_name = []

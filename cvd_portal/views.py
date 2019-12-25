@@ -23,6 +23,8 @@ from cvd_portal.fcm_d import send_message
 from random import randint
 from .inform import send_abcd_notification
 from datetime import datetime
+from django.utils import timezone
+import pytz
 
 class PatientDataCreate(generics.CreateAPIView):
     authentication_classes = (TokenAuthentication,)
@@ -324,7 +326,8 @@ class NotificationCRUD(APIView):
         _to = data['to']
         _from = data['from']
         response['response'] = send_message(_to, _from, msg)
-        Notifications(text=msg, patient=p).save()
+        times = timezone.now()
+        Notifications(text=msg,time_stamp=times, patient=p).save()
         return JsonResponse(
             response, safe=False, content_type='application/json')
 
@@ -503,7 +506,7 @@ class Ocr(APIView):
             filename = "{}".format(upload.name)
             mobile_ = request.POST['mobile']
 
-            with open("/dhadkan_v3_backend-0.0.2/" + filename, 'wb+') as destination:
+            with open("/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/" + filename, 'wb+') as destination:
                 for chunk in upload.chunks():
                     destination.write(chunk)
 
@@ -512,7 +515,7 @@ class Ocr(APIView):
             return JsonResponse({"message": "please check notification or alert"} , safe=False, content_type="application/json")
 
         except:
-            return JsonResponse({"message": "please try again"} , safe=False, content_type="application/json") 
+            return JsonResponse({"message": "May be image has no extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
 
 class Classify(APIView):
 
