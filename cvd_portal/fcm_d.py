@@ -29,7 +29,7 @@ def send_message(_to, _from, message):
     r = requests.post(url, data=body, headers=headers)
     print(r.text)
 
-    return "Message Send"
+    return "Message Sent"
 
 
 

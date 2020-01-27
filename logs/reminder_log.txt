@@ -203,3 +203,1957 @@ Notification send to : Deepak_patient 2019-12-25 14:00:02.384552
 }
 
 Notification send to : Kittu 2019-12-25 19:00:03.140671
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-26 08:00:03.144302
+{
+  "name": "projects/my-dhadkan/messages/0:1577349002174457%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-26 14:00:02.226542
+{
+  "name": "projects/my-dhadkan/messages/0:1577367002871665%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-26 19:00:02.944479
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-27 08:00:03.026421
+{
+  "name": "projects/my-dhadkan/messages/0:1577435402722732%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-27 14:00:02.786925
+{
+  "name": "projects/my-dhadkan/messages/0:1577444402367716%accfa164accfa164"
+}
+
+Notification send to : pat pae 2019-12-27 16:30:02.485613
+{
+  "name": "projects/my-dhadkan/messages/0:1577453403056926%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-27 19:00:03.135395
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-28 08:00:02.480675
+{
+  "name": "projects/my-dhadkan/messages/0:1577521802373057%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-28 14:00:02.432547
+{
+  "name": "projects/my-dhadkan/messages/0:1577539802761381%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-28 19:00:02.822082
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-29 08:00:03.022724
+{
+  "name": "projects/my-dhadkan/messages/0:1577608202767291%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-29 14:00:02.815412
+{
+  "name": "projects/my-dhadkan/messages/0:1577626203179317%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-29 19:00:03.250881
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-30 08:00:02.620570
+{
+  "name": "projects/my-dhadkan/messages/0:1577694602466810%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-30 14:00:02.538634
+{
+  "name": "projects/my-dhadkan/messages/0:1577712605368164%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-30 19:00:05.440532
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1528, in _conn_request
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1290, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 27, in send_message
+    'Authorization': 'Bearer ' + _get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 19, in _get_access_token
+    access_token_info = credentials.get_access_token()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 663, in get_access_token
+    self.refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 545, in refresh
+    self._refresh(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 749, in _refresh
+    self._do_refresh_request(http)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/client.py", line 780, in _do_refresh_request
+    body=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/oauth2client/transport.py", line 282, in request
+    connection_type=connection_type)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1957, in request
+    cachekey,
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1622, in _request
+    conn, request_uri, method, body, headers
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/httplib2/__init__.py", line 1535, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2019-12-31 11:10:04.847715
+{
+  "name": "projects/my-dhadkan/messages/0:1577781002623820%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2019-12-31 14:00:02.669721
+{
+  "name": "projects/my-dhadkan/messages/0:1577799002722869%accfa164accfa164"
+}
+
+Notification send to : Kittu 2019-12-31 19:00:02.776516
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-01 08:00:02.891431
+{
+  "name": "projects/my-dhadkan/messages/0:1577867403675080%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-01 14:00:03.742918
+{
+  "name": "projects/my-dhadkan/messages/0:1577885402990417%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-01 19:00:03.066458
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-02 08:00:03.236603
+{
+  "name": "projects/my-dhadkan/messages/0:1577953802894837%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-02 14:00:02.972838
+{
+  "name": "projects/my-dhadkan/messages/0:1577971803913702%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-02 19:00:03.991072
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-03 08:00:03.109751
+{
+  "name": "projects/my-dhadkan/messages/0:1578040202803615%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-03 14:00:02.860679
+{
+  "name": "projects/my-dhadkan/messages/0:1578058202905803%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-03 19:00:02.963325
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-04 08:00:03.152997
+{
+  "name": "projects/my-dhadkan/messages/0:1578126603688500%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-04 14:00:03.742819
+{
+  "name": "projects/my-dhadkan/messages/0:1578144602956896%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-04 19:00:03.010536
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-05 08:00:03.104419
+{
+  "name": "projects/my-dhadkan/messages/0:1578213002233644%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-05 14:00:02.324381
+{
+  "name": "projects/my-dhadkan/messages/0:1578231003090699%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-05 19:00:03.145069
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-06 08:00:02.331482
+{
+  "name": "projects/my-dhadkan/messages/0:1578299403392020%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-06 14:00:03.469026
+{
+  "name": "projects/my-dhadkan/messages/0:1578317403194468%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-06 19:00:03.256616
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-07 08:00:02.408129
+{
+  "name": "projects/my-dhadkan/messages/0:1578385803003372%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-07 14:00:03.065460
+{
+  "name": "projects/my-dhadkan/messages/0:1578403802325802%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-07 19:00:02.385731
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-08 08:00:02.867281
+{
+  "name": "projects/my-dhadkan/messages/0:1578472203078451%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-08 14:00:03.149748
+{
+  "name": "projects/my-dhadkan/messages/0:1578490202303334%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-08 19:00:02.705709
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-09 08:00:02.842998
+{
+  "name": "projects/my-dhadkan/messages/0:1578558603295222%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-09 14:00:03.340862
+{
+  "name": "projects/my-dhadkan/messages/0:1578576603406331%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-09 19:00:03.472131
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-10 08:00:02.686029
+{
+  "name": "projects/my-dhadkan/messages/0:1578645003103967%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-10 14:00:03.196800
+{
+  "name": "projects/my-dhadkan/messages/0:1578663002483659%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-10 19:00:02.552698
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-11 08:00:02.280515
+{
+  "name": "projects/my-dhadkan/messages/0:1578731402980179%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-11 14:00:03.048268
+{
+  "name": "projects/my-dhadkan/messages/0:1578749404002007%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-11 19:00:04.049709
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-12 08:00:03.067483
+{
+  "name": "projects/my-dhadkan/messages/0:1578817803101785%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-12 14:00:03.156594
+{
+  "name": "projects/my-dhadkan/messages/0:1578835803135840%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-12 19:00:03.186656
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-13 08:00:02.901039
+{
+  "name": "projects/my-dhadkan/messages/0:1578904202919897%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-13 14:00:02.996113
+{
+  "name": "projects/my-dhadkan/messages/0:1578922204964802%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-13 19:00:05.021705
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-14 08:00:03.123284
+{
+  "name": "projects/my-dhadkan/messages/0:1578990604330261%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-14 14:00:04.393636
+{
+  "name": "projects/my-dhadkan/messages/0:1579008603706375%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-14 19:00:03.796587
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-15 08:00:03.374549
+{
+  "name": "projects/my-dhadkan/messages/0:1579077004277443%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-15 14:00:04.359911
+{
+  "name": "projects/my-dhadkan/messages/0:1579095004914790%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-15 19:00:04.975415
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-16 08:00:02.330332
+{
+  "name": "projects/my-dhadkan/messages/0:1579163402138886%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-16 14:00:02.211939
+{
+  "name": "projects/my-dhadkan/messages/0:1579181403646853%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-16 19:00:03.716251
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-17 08:00:02.873854
+{
+  "name": "projects/my-dhadkan/messages/0:1579249802781905%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-17 14:00:02.844782
+{
+  "name": "projects/my-dhadkan/messages/0:1579267805333728%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-17 19:00:05.411287
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-18 08:00:03.144425
+{
+  "name": "projects/my-dhadkan/messages/0:1579336202556554%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-18 14:00:02.618778
+{
+  "name": "projects/my-dhadkan/messages/0:1579354203045701%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-18 19:00:03.121645
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-19 08:00:02.546091
+{
+  "name": "projects/my-dhadkan/messages/0:1579422602299903%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-19 14:00:02.390880
+{
+  "name": "projects/my-dhadkan/messages/0:1579440602609995%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-19 19:00:02.661109
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-20 08:00:02.633842
+{
+  "name": "projects/my-dhadkan/messages/0:1579509002558949%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-20 14:00:02.630525
+{
+  "name": "projects/my-dhadkan/messages/0:1579527002173527%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-20 19:00:02.242736
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-21 08:00:02.648056
+{
+  "name": "projects/my-dhadkan/messages/0:1579595402715845%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-21 14:00:02.767105
+{
+  "name": "projects/my-dhadkan/messages/0:1579613403073026%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-21 19:00:03.130368
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-22 08:00:02.478658
+{
+  "name": "projects/my-dhadkan/messages/0:1579674002443063%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 11:50:02.525426
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f16f0100908>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f16f0100908>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f16f0100908>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1579675203155588%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:10:03.225303
+{
+  "name": "projects/my-dhadkan/messages/0:1579675203639809%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:10:03.696491
+{
+  "name": "projects/my-dhadkan/messages/0:1579675204102095%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:10:04.164525
+{
+  "name": "projects/my-dhadkan/messages/0:1579675932096455%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:22:12.169205
+{
+  "name": "projects/my-dhadkan/messages/0:1579675932829742%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:22:12.915786
+{
+  "name": "projects/my-dhadkan/messages/0:1579676402116753%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:30:02.167657
+{
+  "name": "projects/my-dhadkan/messages/0:1579677002418385%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:40:02.482551
+{
+  "name": "projects/my-dhadkan/messages/0:1579677602649438%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 12:50:02.691618
+{
+  "name": "projects/my-dhadkan/messages/0:1579681802698756%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-22 14:00:02.748476
+{
+  "name": "projects/my-dhadkan/messages/0:1579696202244887%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-22 18:00:02.274513
+{
+  "name": "projects/my-dhadkan/messages/0:1579699803472431%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-22 19:00:03.517586
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-23 08:00:03.120529
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f47fe7c5a20>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f47fe7c5a20>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f47fe7c5a20>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1579747202019732%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 08:10:02.073324
+{
+  "name": "projects/my-dhadkan/messages/0:1579756803030971%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 10:50:03.118700
+{
+  "name": "projects/my-dhadkan/messages/0:1579757402261838%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 11:00:02.350915
+{
+  "name": "projects/my-dhadkan/messages/0:1579758002622810%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 11:10:02.692081
+{
+  "name": "projects/my-dhadkan/messages/0:1579758003079822%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 11:10:03.168657
+{
+  "name": "projects/my-dhadkan/messages/0:1579768203709754%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-23 14:00:03.776770
+{
+  "name": "projects/my-dhadkan/messages/0:1579782602673343%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-23 18:00:02.745019
+{
+  "name": "projects/my-dhadkan/messages/0:1579786203083898%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-23 19:00:03.164949
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-24 08:00:02.421973
+{
+  "name": "projects/my-dhadkan/messages/0:1579833002844775%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-24 08:00:02.898599
+{
+  "name": "projects/my-dhadkan/messages/0:1579833134521640%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-24 08:02:14.588679
+{
+  "name": "projects/my-dhadkan/messages/0:1579833265468001%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-24 08:04:25.527448
+{
+  "name": "projects/my-dhadkan/messages/0:1579854602589715%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-24 14:00:02.656883
+{
+  "name": "projects/my-dhadkan/messages/0:1579869003870744%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-24 18:00:03.958454
+{
+  "name": "projects/my-dhadkan/messages/0:1579872603649259%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-24 19:00:03.697705
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-25 08:00:03.160571
+{
+  "name": "projects/my-dhadkan/messages/0:1579919403582461%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-25 08:00:03.646479
+{
+  "name": "projects/my-dhadkan/messages/0:1579919404063845%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-25 08:00:04.119700
+{
+  "name": "projects/my-dhadkan/messages/0:1579919404529548%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-25 08:00:04.590628
+{
+  "name": "projects/my-dhadkan/messages/0:1579941002814356%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-25 14:00:02.905124
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f210bbb6d68>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f210bbb6d68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f210bbb6d68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1579956004719863%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-25 18:10:04.790136
+{
+  "name": "projects/my-dhadkan/messages/0:1579959002587569%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-25 19:00:02.656610
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-26 08:00:03.108590
+{
+  "name": "projects/my-dhadkan/messages/0:1580005803511874%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-26 08:00:03.580379
+{
+  "name": "projects/my-dhadkan/messages/0:1580005804203948%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-26 08:00:04.256005
+{
+  "name": "projects/my-dhadkan/messages/0:1580005804653367%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-26 08:00:04.697638
+{
+  "name": "projects/my-dhadkan/messages/0:1580027402212783%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-26 14:00:02.277310
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fd92afeed68>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fd92afeed68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fd92afeed68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1580042402986762%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-26 18:10:03.038262
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f4d1ea7bcf8>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f4d1ea7bcf8>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f4d1ea7bcf8>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1580046002652154%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-26 19:10:02.715883
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-27 08:00:03.064752
+{
+  "name": "projects/my-dhadkan/messages/0:1580092333345014%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-27 08:02:13.432095
+{
+  "name": "projects/my-dhadkan/messages/0:1580092333814748%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-27 08:02:13.899419
+{
+  "name": "projects/my-dhadkan/messages/0:1580092334282286%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-27 08:02:14.358901
+{
+  "name": "projects/my-dhadkan/messages/0:1580106002971334%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-27 11:50:03.040225
+{
+  "name": "projects/my-dhadkan/messages/0:1580113802190617%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-27 14:00:02.252660
+{
+  "name": "projects/my-dhadkan/messages/0:1580128203540705%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-27 18:00:03.623945
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f4aab071cf8>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f4aab071cf8>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f4aab071cf8>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1580132402380175%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-27 19:10:02.438831

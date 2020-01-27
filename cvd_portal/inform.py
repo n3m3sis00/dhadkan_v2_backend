@@ -191,7 +191,7 @@ def get_parsed_ocr_results(data):
             
             print(expected_name)
 
-            message = "Extracted Name: " + extracted_name + "\nExpacted Name: " + expected_name  
+            message = "Extracted Name: " + extracted_name + "\nExpected Name: " + expected_name  
 
             print(message)       
 

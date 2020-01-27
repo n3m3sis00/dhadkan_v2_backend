@@ -146,7 +146,7 @@ class Login(APIView):
         print(user)
         if not user:
             return Response(
-               'Username password are not correct',
+               'Username or password not correct',
                status=status.HTTP_404_NOT_FOUND
             )
         response = {}
@@ -512,10 +512,10 @@ class Ocr(APIView):
 
             send_ocr_notification(mobile_)
 
-            return JsonResponse({"message": "please check notification or alert"} , safe=False, content_type="application/json")
+            return JsonResponse({"message": "Please check your notifications or alert"} , safe=False, content_type="application/json")
 
         except:
-            return JsonResponse({"message": "May be image has no extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
+            return JsonResponse({"message": "Image may not have any extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
 
 class Classify(APIView):
 
