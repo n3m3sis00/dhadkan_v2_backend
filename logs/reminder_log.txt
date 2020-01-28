@@ -2157,3 +2157,43 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.co
 }
 
 Notification send to : Kittu 2020-01-27 19:10:02.438831
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-28 08:00:02.948412
+{
+  "name": "projects/my-dhadkan/messages/0:1580178603339171%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-28 08:00:03.398294
+{
+  "name": "projects/my-dhadkan/messages/0:1580178603777814%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-28 08:00:03.841421
+{
+  "name": "projects/my-dhadkan/messages/0:1580178604217945%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-28 08:00:04.284195
+{
+  "name": "projects/my-dhadkan/messages/0:1580200203097592%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-28 14:00:03.161836
+{
+  "name": "projects/my-dhadkan/messages/0:1580214602255497%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-28 18:00:02.323900
