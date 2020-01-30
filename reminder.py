@@ -32,7 +32,7 @@ def notify():
             else:
                 freq = rem.frequency
 
-                rem.time = rem.time + timedelta(days = int(freq))
+                rem.time = rem.time + timedelta(hours = 24*int(freq))
                 rem.save()
 
 

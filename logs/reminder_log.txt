@@ -2197,3 +2197,263 @@ Notification send to : Deepak_patient 2020-01-28 14:00:03.161836
 }
 
 Notification send to : pat pae 2020-01-28 18:00:02.323900
+{
+  "name": "projects/my-dhadkan/messages/0:1580218203492361%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-28 19:00:03.575507
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-29 08:00:03.059495
+{
+  "name": "projects/my-dhadkan/messages/0:1580265003458297%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-29 08:00:03.524500
+{
+  "name": "projects/my-dhadkan/messages/0:1580265003919702%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-29 08:00:03.980388
+{
+  "name": "projects/my-dhadkan/messages/0:1580265135405540%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-29 08:02:15.469308
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f642dbb9358>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f642dbb9358>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f642dbb9358>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1580287203128183%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-29 14:10:03.189575
+{
+  "name": "projects/my-dhadkan/messages/0:1580301003589559%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-29 18:00:03.678312
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f86cb78bd68>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f86cb78bd68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f86cb78bd68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f5cb053ed68>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f5cb053ed68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 45, in <module>
+    notify()
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/reminder.py", line 25, in notify
+    send_message(device_id,"me",text)
+  File "/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/cvd_portal/fcm_d.py", line 29, in send_message
+    r = requests.post(url, data=body, headers=headers)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dhadkan/shreya_dhadkan/version3/env/lib/python3.6/site-packages/requests/adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='fcm.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/my-dhadkan/messages:send (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f5cb053ed68>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+{
+  "name": "projects/my-dhadkan/messages/0:1580305803339999%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-29 19:20:03.413256
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+Notification send to : Shreya Srivastava 2020-01-30 08:02:12.537313
+{
+  "name": "projects/my-dhadkan/messages/0:1580351663386196%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-30 08:04:23.447776
+{
+  "name": "projects/my-dhadkan/messages/0:1580351663820920%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-30 08:04:23.890825
+{
+  "name": "projects/my-dhadkan/messages/0:1580351664907242%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-30 08:04:24.980123
+{
+  "name": "projects/my-dhadkan/messages/0:1580373002719300%accfa164accfa164"
+}
+
+Notification send to : Deepak_patient 2020-01-30 14:00:02.790135
+{
+  "name": "projects/my-dhadkan/messages/0:1580387402946538%accfa164accfa164"
+}
+
+Notification send to : pat pae 2020-01-30 18:00:02.993570
+{
+  "name": "projects/my-dhadkan/messages/0:1580391002187862%accfa164accfa164"
+}
+
+Notification send to : Kittu 2020-01-30 19:00:02.279427
