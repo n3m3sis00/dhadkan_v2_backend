@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ SECRET_KEY = 'wl-h^c)a!#n6f+&n!hjyq))a#mk8(&rf)#g_485y34yd%fuu_@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['88b72ec6.ngrok.io','dkumar.iitr.ac.in','10.54.1.35', 'localhost', '127.0.0.1', '192.168.103.187', 'compbio.iitr.ac.in', '192.168.103.89','0.0.0.0','10.0.2.2']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +43,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'cvd_portal'
 ]
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -96,6 +101,10 @@ DATABASES = {
     }
 }
 
+TESTING = os.environ.get("TESTING")
+if not TESTING:
+    print("hello")
+    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -133,4 +142,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+if not TESTING:
+    django_heroku.settings(locals())
