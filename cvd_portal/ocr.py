@@ -1,7 +1,5 @@
 import sys
 import requests
-import cv2
-
 
 def ocr_space_file(filename, overlay=True, api_key='helloworld', language='eng'):
 
