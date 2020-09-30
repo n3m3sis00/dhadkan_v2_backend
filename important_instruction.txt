@@ -1,0 +1,3 @@
+check python runtime (3.6)
+check installation of opencv
+check django version
