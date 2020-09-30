@@ -37,7 +37,7 @@ class Doctor(models.Model):
 
 class Patient(models.Model):
     name = models.CharField(max_length=60, default="Somesh")
-    date_of_birth = models.IntegerField(default=0)
+    date_of_birth = models.DateTimeField(default=timezone.now)
     gender = models.IntegerField(default=1)
     email = models.EmailField(blank=True)
     address = models.TextField(null=True)
