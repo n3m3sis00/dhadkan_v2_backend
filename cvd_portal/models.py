@@ -24,7 +24,7 @@ class Doctor(models.Model):
     name = models.CharField(max_length=60, default="Somesh")
     hospital = models.CharField(max_length=30, blank=True)
     email = models.EmailField()
-    mobile = models.IntegerField(blank=True)
+    mobile = models.BigAutoField(blank=True)
     speciality = models.CharField(max_length=100, blank=True)
     designation = models.CharField(max_length=100, blank=True)
     device = models.OneToOneField(Device, null=True, related_name='doctor')
@@ -42,7 +42,7 @@ class Patient(models.Model):
     email = models.EmailField(blank=True)
     address = models.TextField(null=True)
     doctor = models.ForeignKey(Doctor, related_name="patients", null=True)
-    mobile = models.IntegerField(blank=True)
+    mobile = models.BigAutoField(blank=True)
     device = models.OneToOneField(Device, null=True, related_name='patient')
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True)
