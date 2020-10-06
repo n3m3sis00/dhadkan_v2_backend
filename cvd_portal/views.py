@@ -38,9 +38,9 @@ class PatientDataCreate(generics.CreateAPIView):
         return super().post(request)
 
 class PatientData2Create(generics.CreateAPIView):
-    # authentication_classes = (TokenAuthentication,)
-    # permission_classes = (IsAuthenticated,)
-    serializer_class = PatientDataSerializer
+    authentication_classes = ()
+    permission_classes = ()
+    serializer_class = PatientData2Serializer
 
     def post(self, request):
         check(request)
