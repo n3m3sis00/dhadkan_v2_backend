@@ -26,9 +26,20 @@ from datetime import datetime
 from django.utils import timezone
 import pytz
 
+
+
 class PatientDataCreate(generics.CreateAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
+    serializer_class = PatientDataSerializer
+
+    def post(self, request):
+        check(request)
+        return super().post(request)
+
+class PatientData2Create(generics.CreateAPIView):
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = PatientDataSerializer
 
     def post(self, request):

@@ -37,5 +37,7 @@ urlpatterns = [
         patient_notification.as_view()),
     url(
         r'api/notification/doctor/(?P<pk>[0-9]+)$',
-        doctor_notification.as_view())
+        doctor_notification.as_view()),
+
+    url(r'api/data2$', PatientData2Create.as_view()),
 ]

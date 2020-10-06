@@ -71,6 +71,14 @@ class PatientData(models.Model):
     def __str__(self):
         return self.patient.name + ' ' + str(self.time_stamp)
 
+class PatientData2(models.Model):
+    patient = models.ForeignKey(Patient, related_name='data')
+    time_stamp = CustomDateTimeField(default=datetime.datetime.now)
+    ques1 = models.IntegerField()
+ 
+    def __str__(self):
+        return self.patient.name + ' ' + str(self.time_stamp)
+
 
 class OTP(models.Model):
     otp = models.IntegerField()
