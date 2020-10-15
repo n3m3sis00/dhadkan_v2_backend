@@ -480,8 +480,9 @@ class patient_notification(APIView):
             "notifications": []
         }
         for n in nl:
-            no = {"text": ""}
+            no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
+            no['time_stamp'] = n.time_stamp
             response["notifications"].append(no)
         return JsonResponse(
             response,
@@ -499,8 +500,9 @@ class doctor_notification(APIView):
             "notifications": []
         }
         for n in nl:
-            no = {"text": ""}
+            no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
+            no['time_stamp'] = n.time_stamp
             response["notifications"].append(no)
         print(response)
         return JsonResponse(
