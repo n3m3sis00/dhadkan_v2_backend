@@ -1,3 +1,2 @@
-check python runtime (3.6)
-check installation of opencv
+check python runtime (3.6.0)
 check django version

@@ -15,7 +15,7 @@ def _get_access_token():
         :return: Access token.
     """
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
-                          '/app/cvd_portal/my-dhadkan-firebase.json', SCOPES)
+                          '/app/dhadkan/my-dhadkan-firebase.json', SCOPES)
     access_token_info = credentials.get_access_token()
     return access_token_info.access_token
 

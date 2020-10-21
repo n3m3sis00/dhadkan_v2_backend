@@ -13,7 +13,7 @@ class CustomDateTimeField(models.DateTimeField):
 
 
 class Device(models.Model):
-    user_type = models.CharField(max_length=20, default="", blank=True)
+    user_type = models.CharField(max_length=254, default="", blank=True)
     device_id = models.TextField()
 
     def __str__(self):
@@ -21,12 +21,12 @@ class Device(models.Model):
 
 
 class Doctor(models.Model):
-    name = models.CharField(max_length=60, default="Somesh")
-    hospital = models.CharField(max_length=30, blank=True)
+    name = models.CharField(max_length=254, default="Somesh")
+    hospital = models.CharField(max_length=254, blank=True)
     email = models.EmailField()
     mobile = models.BigIntegerField(blank=True)
-    speciality = models.CharField(max_length=100, blank=True)
-    designation = models.CharField(max_length=100, blank=True)
+    speciality = models.CharField(max_length=102, blank=True)
+    designation = models.CharField(max_length=103, blank=True)
     device = models.OneToOneField(Device, null=True, related_name='doctor')
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True)
@@ -36,7 +36,7 @@ class Doctor(models.Model):
 
 
 class Patient(models.Model):
-    name = models.CharField(max_length=60, default="Somesh")
+    name = models.CharField(max_length=254, default="Somesh")
     date_of_birth = models.IntegerField(blank=True)
     gender = models.IntegerField(default=1)
     email = models.EmailField(blank=True)
