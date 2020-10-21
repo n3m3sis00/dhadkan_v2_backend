@@ -482,7 +482,7 @@ class patient_notification(APIView):
         for n in nl:
             no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
-            no['time_stamp'] = n.time_stamp
+            no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
         return JsonResponse(
             response,
