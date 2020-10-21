@@ -102,6 +102,15 @@ class PatientImageNameSerializer(DynamicFieldsModelSerializer):
             'patient'
         ]
 
+class PatientDocChatSerializer(DynamicFieldsModelSerializer):
+    class Meta:
+        model = Notifications
+        fields = [
+            'pk',
+            'time_stamp',
+            'text'
+        ]
+
 
 class DeviceSerializer(DynamicFieldsModelSerializer):
     class Meta:
@@ -113,6 +122,7 @@ class PatientSerializer(DynamicFieldsModelSerializer):
     # data = PatientDataSerializer(many=True, read_only=True)
     data = serializers.SerializerMethodField('get_patient_data')
     images = serializers.SerializerMethodField('get_image_data')
+    chat = serializers.SerializerMethodField('get_chat_data')
     user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
     doctor = serializers.PrimaryKeyRelatedField(queryset=Doctor.objects.all())
     device = DeviceSerializer(read_only=True, many=False)
@@ -129,6 +139,7 @@ class PatientSerializer(DynamicFieldsModelSerializer):
             'mobile',
             'data',
             'images',
+            'chat',
             'gender',
             'user',
             'device'
@@ -144,6 +155,12 @@ class PatientSerializer(DynamicFieldsModelSerializer):
         qset = Image.objects.filter(
             patient_id=obj.pk).order_by('-time_stamp')
         ser = PatientImageNameSerializer(qset, many=True, read_only=True)
+        return ser.data
+
+    def get_chat_data(self, obj):
+        qset = Notifications.objects.filter(
+            patient_id=obj.pk).order_by('-time_stamp')
+        ser = PatientDocChatSerializer(qset, many=True, read_only=True)
         return ser.data
 
 
