@@ -473,9 +473,6 @@ class patient_notification(APIView):
     def get(self, request, pk, format=None):
         p = Patient.objects.get(pk=pk)
         nl = Notifications.objects.filter(patient=p).order_by('-time_stamp')
-        print(nl)
-        print(p)
-        print(p.name)
         response = {
             "notifications": []
         }
@@ -502,9 +499,8 @@ class doctor_notification(APIView):
         for n in nl:
             no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
-            no['time_stamp'] = n.time_stamp
+            no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
-        print(response)
         return JsonResponse(
             response,
             safe=False, content_type='application/json')
@@ -519,7 +515,7 @@ class Ocr(APIView):
             filename = "{}".format(upload.name)
             mobile_ = request.POST['mobile']
 
-            with open("/home/dhadkan/shreya_dhadkan/version3/dhadkan_v3_backend/" + filename, 'wb+') as destination:
+            with open("/app/" + filename, 'wb+') as destination:
                 for chunk in upload.chunks():
                     destination.write(chunk)
 
