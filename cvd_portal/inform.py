@@ -191,7 +191,6 @@ def get_parsed_ocr_results(data):
     
     with open('/app/cvd_portal/medicine.txt', 'r') as med_file:
         medicines = med_file.readlines()
-        
         found_med_name = []
         found_med_name_prob = []
         database_med = []
@@ -204,36 +203,6 @@ def get_parsed_ocr_results(data):
             else:
                 continue
 
-
-            #try:
-            #    if len(i) <= len(close_match[0]):
-            #        notfound = 0
-            #        for counter, j in enumerate(i):
-            #            if j != close_match(counter[0]):
-            #                notfound +=1
-            #            else:
-            #                continue
-            #        database_med.append(i)
-            #        found_med_name.append(close_match[0])
-            #        found_med_name_prob.append((len(i) - notfound)/len(i))
-            
-            #    else:
-            #        notfound = 0
-            #        for counter, j in enumerate(close_match[0]):
-            #            if j != i[counter]:
-            #                notfound += 1
-            #            else:
-            #                continue
-                
-            #        database_med.append(i)
-            #        found_med_name.append(close_match[0])
-            #        print(notfound)
-            #        print(close_match)
-            #        print(i)
-            #        found_med_name_prob.append((len(close_match[0]) - notfound)/len(close_match[0]))
-            #except:
-            #    continue
-
       
         if len(found_med_name) != 0:
             print("hi from true")
@@ -242,9 +211,6 @@ def get_parsed_ocr_results(data):
             
             found_med_name = list(set(found_med_name))
             data_base_med = [x.replace("\n","") for x in database_med]
-            #print(found_med_name_prob)
-            #m = max(found_med_name_prob)
-            #locations = [x for x, y in enumerate(found_med_name_prob) if y == m]
             
             print(data_base_med, found_med_name)
             extracted_name = ", ".join(found_med_name)
@@ -259,7 +225,7 @@ def get_parsed_ocr_results(data):
             return True, message
         else:
             print("hi from false")
-            return False, "No data"
+            return False, "No Medicinal Information Found in submitted Image for OCR"
         
 def send_ocr_notification(mobile):
     print("hi from ocr notification")
@@ -274,17 +240,22 @@ def send_ocr_notification(mobile):
     ismessage, message = get_parsed_ocr_results(data_ocr_)
     print(ismessage, message)    
     print(p.name)
-    doc_message = p.name + "\n\n" + message
+    patient_noti = message + "\n\n" + "-------------------" + "\n".join(data_ocr_)
+    doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
     if ismessage:
         send_message(d_id, None, doc_message)
-        send_message(p_id, None, message)
+        send_message(p_id, None, patient_noti)
 
         Notifications(text=doc_message, doctor=p.doctor).save()
-        Notifications(text=message, patient=p).save()
+        Notifications(text=patient_noti, patient=p).save()
     else:
-        
-        send_message(p_id, None, "Please send a clear image\n\n Parse results are:\n" + " ".join(data_ocr))
+        Notifications(text=doc_message, doctor=p.doctor).save()
+        Notifications(text=patient_noti, patient=p).save()
+
+        send_message(d_id, None, doc_message)
+        send_message(p_id, None, patient_noti)
+
     return True
 
 def send_abcd_notification(data,mobile):
