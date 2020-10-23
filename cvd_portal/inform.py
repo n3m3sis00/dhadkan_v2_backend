@@ -296,3 +296,7 @@ def send_email_support(msg, user):
     print(message)
     send_mail('Dhadkan Report', message, 'noreply@dhadkan.co', ['shreya2feb@gmail.com', 'durgesh123.iitr@gmail.com'], fail_silently=False)
     return 
+
+def checkKCCQ(request):
+    print(request)
+    print(request.data)

@@ -17,7 +17,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from cvd_portal.inform import check, send_ocr_notification, send_email_support
+from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ
 from cvd_portal.fcm_d import send_message
 
 from random import randint
@@ -38,12 +38,12 @@ class PatientDataCreate(generics.CreateAPIView):
         return super().post(request)
 
 class PatientData2Create(generics.CreateAPIView):
-    authentication_classes = ()
-    permission_classes = ()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
     serializer_class = PatientData2Serializer
 
     def post(self, request):
-        check(request)
+        checkKCCQ(request)
         return super().post(request)
 
 
@@ -538,26 +538,26 @@ class Report(APIView):
                 'Invalid JSON - {0}'.format(error.detail),
                 status=status.HTTP_400_BAD_REQUEST
             )
-        # try:
-        msg = data['msg']
-        id_ = data['u_id']
-        type_ = data['type']
-        if(type_ == 'doctor'):
-            user = Doctor.objects.get(pk=int(id_))
-            # rep = Report(msg = msg, doctor=user)
-            # rep.save()
-            send_email_support(msg, user)
-        else:
-            user = Patient.objects.get(pk=int(id_))
-            # rep = Report(msg = msg, patient=user)
-            # rep.save()
-            send_email_support(msg, user)
-        
+        try:
+            msg = data['msg']
+            id_ = data['u_id']
+            type_ = data['type']
+            if(type_ == 'doctor'):
+                user = Doctor.objects.get(pk=int(id_))
+                # rep = Report(msg = msg, doctor=user)
+                # rep.save()
+                send_email_support(msg, user)
+            else:
+                user = Patient.objects.get(pk=int(id_))
+                # rep = Report(msg = msg, patient=user)
+                # rep.save()
+                send_email_support(msg, user)
+            
 
-        return JsonResponse({"message": "Your Msg has been sent to Developer"} , safe=False, content_type="application/json")
+            return JsonResponse({"message": "Your Msg has been sent to Developer"} , safe=False, content_type="application/json")
 
-        # except:
-        #     return JsonResponse({"message": "Something went wrong Please mail your query to compbio.iitr@gmail.com"} , safe=False, content_type="application/json") 
+        except:
+            return JsonResponse({"message": "Something went wrong Please mail your query to compbio.iitr@gmail.com"} , safe=False, content_type="application/json") 
 
 class Classify(APIView):
 
