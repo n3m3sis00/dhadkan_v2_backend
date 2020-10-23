@@ -294,5 +294,5 @@ def send_email_support(msg, user):
     print("Sending MSG")
     message = user.name + "\n\n" + msg
     print(message)
-    send_mail('Dhadkan Report', message, 'noreply@dhadkan.co', ['durgesh123.iitr@gmail.com'], fail_silently=False)
+    send_mail('Dhadkan Report', message, 'noreply@dhadkan.co', ['ssrivastava@bt.iitr.ac.in'], fail_silently=False)
     return 
