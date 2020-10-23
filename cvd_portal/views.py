@@ -19,6 +19,7 @@ from rest_framework import status
 
 from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ, notify_doc
 from cvd_portal.fcm_d import send_message
+from cvd_portal.genreport import genreport
 
 from dhadkan.opt import send_otp_msg
 
@@ -420,7 +421,7 @@ class gen_otp(APIView):
             return JsonResponse(
                 response,
                 safe=False, content_type='application/json')
-                
+
         response['message'] = "Not Registered"
         return JsonResponse(
             response,
@@ -663,3 +664,23 @@ class DelReminder(APIView):
         rem.delete()
 
         return JsonResponse({"message":text}, safe=False, content_type = "application/json")
+
+class DownloadReport(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def post(self,request, format=None):
+        try:
+            data = request.data
+            print(data)
+        except ParseError as error:
+            return Response(
+                'Invalid JSON - {0}'.format(error.detail),
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        try:
+            genreport(data)
+            return JsonResponse({"message": "Report is mailed to you"} , safe=False, content_type="application/json")
+
+        except:
+            return JsonResponse({"message": "something failed"} , safe=False, content_type="application/json") 

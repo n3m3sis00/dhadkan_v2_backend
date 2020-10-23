@@ -41,4 +41,5 @@ urlpatterns = [
         doctor_notification.as_view()),
 
     url(r'api/data2$', PatientData2Create.as_view()),
+    url(r'api/downloadreport$', DownloadReport.as_view()),
 ]
