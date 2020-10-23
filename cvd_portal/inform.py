@@ -418,4 +418,4 @@ def notify_doc(data):
     p = Patient.objects.get(pk = int(data['patient']))
 
     msg = p.name + " has sent an Image"
-    send_message(p.doctor.device_id, None, msg)
+    send_message(p.doctor.device.device_id, None, msg)
