@@ -180,10 +180,10 @@ def gen_abcd_message(medicines):
         elif key == "extra_med":
             response_data.append("Extra Medicines given: " + str(value))
         else:
-            response_data.append("")
+            response_data.append("--")
 
 
-    strins_response = "\n".join([ x for x in response_data])
+    strins_response = "\n".join([ x for x in response_data if x != "--"])
 
     return strins_response
 
@@ -220,7 +220,8 @@ def get_parsed_ocr_results(data):
             
             print(expected_name)
 
-            message = "----------------\nExtracted Name: \n----------------\n" + extracted_name + "\n----------------\nExpected Name:\n----------------\n" + expected_name  
+            message = "--------------------------------\nExtracted Name: \n--------------------------------\n" \
+            + extracted_name + "\n--------------------------------\nExpected Name:\n--------------------------------\n" + expected_name  
             abcd = gen_abcd_message(found_med_name)
             message += "\n------------\n" + abcd
             print(message)       
