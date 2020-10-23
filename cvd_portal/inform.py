@@ -221,7 +221,8 @@ def get_parsed_ocr_results(data):
             print(expected_name)
 
             message = "Extracted Name: " + extracted_name + "\nExpected Name: " + expected_name  
-
+            abcd = gen_abcd_message(found_med_name)
+            message += "\n------------\n" + abcd
             print(message)       
 
             return True, message
