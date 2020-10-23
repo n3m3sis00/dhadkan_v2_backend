@@ -140,8 +140,8 @@ USE_TZ = True
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'postmaster@sandboxf78ae239adc64b859b6f69f92fa11600.mailgun.org'
-EMAIL_HOST_PASSWORD = 'Qr*Gj3YM}jGm,A--'
-EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = '2a0ca713d9d9bb3cbc4d79c26a73f867-53c13666-fd56cdb1'
+# EMAIL_USE_TLS = True
 
 
 # Static files (CSS, JavaScript, Images)
