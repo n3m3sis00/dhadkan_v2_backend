@@ -16,6 +16,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
+from django.http import HttpResponse
 
 from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ, notify_doc
 from cvd_portal.fcm_d import send_message
@@ -666,21 +667,30 @@ class DelReminder(APIView):
         return JsonResponse({"message":text}, safe=False, content_type = "application/json")
 
 class DownloadReport(APIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
 
-    def post(self,request, format=None):
-        try:
-            data = request.data
-            print(data)
-        except ParseError as error:
-            return Response(
-                'Invalid JSON - {0}'.format(error.detail),
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        try:
-            genreport(data)
-            return JsonResponse({"message": "Report is mailed to you"} , safe=False, content_type="application/json")
+    def get(self, format=None):
+        # try:
+        #     data = request.data
+        #     print(data)
+        # except ParseError as error:
+        #     return Response(
+        #         'Invalid JSON - {0}'.format(error.detail),
+        #         status=status.HTTP_400_BAD_REQUEST
+        #     )
+        # try:
+        name = genreport("name")
+        return JsonResponse({"message": "Get you Report Here https://xyz.com/dhadkan/api/reportview/{}".format(name)} , safe=False, content_type="application/json")
 
-        except:
-            return JsonResponse({"message": "something failed"} , safe=False, content_type="application/json") 
+        # except:
+        #     return JsonResponse({"message": "something failed"} , safe=False, content_type="application/json") 
+
+
+def reportview(request, pk):
+    print(pk)
+    test_file = open('/app/pdfs/{}.pdf'.format(pk), 'rb')
+    response = HttpResponse(content=test_file)
+    response['Content-Type'] = 'application/pdf'
+    response['Content-Disposition'] = 'attachment; filename="{}.txt"'.format(pk)
+    return response

@@ -249,8 +249,6 @@ def send_ocr_notification(mobile):
 
     if ismessage:
         send_message(d_id, None, doc_message)
-        # send_message(p_id, None, patient_noti)
-
         Notifications(text=doc_message, doctor=p.doctor).save()
         Notifications(text=patient_noti, patient=p).save()
     else:

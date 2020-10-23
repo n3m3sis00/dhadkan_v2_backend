@@ -42,4 +42,5 @@ urlpatterns = [
 
     url(r'api/data2$', PatientData2Create.as_view()),
     url(r'api/downloadreport$', DownloadReport.as_view()),
+    url(r'api/reportview/(?P<pk>[0-9]+)$', reportview),
 ]
