@@ -680,7 +680,7 @@ class DownloadReport(APIView):
         #         status=status.HTTP_400_BAD_REQUEST
         #     )
         # try:
-        name = genreport("name")
+        name = genreport(136)
         return JsonResponse({"message": "Get you Report Here https://xyz.com/dhadkan/api/reportview/{}".format(name)} , safe=False, content_type="application/json")
 
         # except:
@@ -689,7 +689,7 @@ class DownloadReport(APIView):
 
 def reportview(request, pk):
     print(pk)
-    test_file = open('/app/pdfs/{}.pdf'.format(pk), 'rb')
+    test_file = open('/home/codespace/workspace/dhadkan_v3_backend/pdfs/{}.pdf'.format(pk), 'rb')
     response = HttpResponse(content=test_file)
     response['Content-Type'] = 'application/pdf'
     response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(pk)
