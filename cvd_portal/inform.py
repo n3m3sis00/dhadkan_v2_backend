@@ -240,12 +240,12 @@ def send_ocr_notification(mobile):
     ismessage, message = get_parsed_ocr_results(data_ocr_)
     print(ismessage, message)    
     print(p.name)
-    patient_noti = message + "\n\n" + "-------------------" + "\n".join(data_ocr_)
+    patient_noti = message + "\n\n" + "-------------------\n" + "\n".join(data_ocr_)
     doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
     if ismessage:
         send_message(d_id, None, doc_message)
-        send_message(p_id, None, patient_noti)
+        # send_message(p_id, None, patient_noti)
 
         Notifications(text=doc_message, doctor=p.doctor).save()
         Notifications(text=patient_noti, patient=p).save()
@@ -254,9 +254,9 @@ def send_ocr_notification(mobile):
         Notifications(text=patient_noti, patient=p).save()
 
         send_message(d_id, None, doc_message)
-        send_message(p_id, None, patient_noti)
+        # send_message(p_id, None, patient_noti)
 
-    return True
+    return patient_noti
 
 def send_abcd_notification(data,mobile):
     timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)

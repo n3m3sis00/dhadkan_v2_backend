@@ -509,7 +509,6 @@ class doctor_notification(APIView):
 class Ocr(APIView):
     def post(self,request, format=None):
         try:
-            
             upload = request.FILES['photo']
             extension =  upload.name.split(".")[1]
             filename = "{}".format(upload.name)
@@ -519,9 +518,9 @@ class Ocr(APIView):
                 for chunk in upload.chunks():
                     destination.write(chunk)
 
-            send_ocr_notification(mobile_)
+            res_ = send_ocr_notification(mobile_)
 
-            return JsonResponse({"message": "Please check your notifications or alert"} , safe=False, content_type="application/json")
+            return JsonResponse({"message": res_} , safe=False, content_type="application/json")
 
         except:
             return JsonResponse({"message": "Image may not have any extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
