@@ -46,6 +46,11 @@ class PatientData2Create(generics.CreateAPIView):
         checkKCCQ(request)
         return super().post(request)
 
+class PatientData2Detail(generics.RetrieveUpdateDestroyAPIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    queryset = PatientData2.objects.all()
+    serializer_class = PatientData2Serializer
 
 class PatientDataDetail(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = (TokenAuthentication,)
