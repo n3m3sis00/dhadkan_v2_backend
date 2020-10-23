@@ -43,7 +43,8 @@ class PatientData2Create(generics.CreateAPIView):
     serializer_class = PatientData2Serializer
 
     def post(self, request):
-        checkKCCQ(request)
+        x = checkKCCQ(request.data)
+        print(x)
         return super().post(request)
 
 class PatientData2Detail(generics.RetrieveUpdateDestroyAPIView):
@@ -419,7 +420,6 @@ class gen_otp(APIView):
 
 class verify_otp(APIView):
     def post(self, request, format=None):
-        # print("yo")
         try:
             data = request.data
             print(data)

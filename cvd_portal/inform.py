@@ -297,6 +297,119 @@ def send_email_support(msg, user):
     send_mail('Dhadkan Report', message, 'noreply@dhadkan.co', ['shreya2feb@gmail.com', 'durgesh123.iitr@gmail.com'], fail_silently=False)
     return 
 
-def checkKCCQ(request):
-    print(request)
-    print(request.data)
+def checkKCCQ(data):
+    physical_limitation = 0
+    symptom_stability = 0
+    symptom_freq = 0
+    symptom_burden = 0
+    total_symptom_score = 0
+    self_efficacy = 0
+    quality_of_life = 0
+    social_limitation = 0
+    overall_summary_score = 0
+    cilinical_summary_score = 0
+
+    cnt = 0
+    temp = 0
+    for ques in ['ques1_a', 'ques1_b', 'ques1_c' ,'ques1_d','ques1_e' ,'ques1_f']:
+        if int(data[ques]) != 0: 
+            cnt += 1
+        temp += int(data[ques])
+
+    if cnt >= 3:
+        physical_limitation = 100 * ((temp / cnt) - 1)/4
+    
+    if int(data['ques2']) != 0:
+        if int(data['ques2']) == 6:
+            data['ques2'] = 3
+        symptom_stability = 100 * (int(data['ques2']) - 1)/4
+
+    cnt = 0
+    for ques in ['ques3', 'ques5', 'ques7', 'ques9']:
+        if int(data[ques]) != 0:
+            cnt += 1
+
+    if  cnt >= 2:
+        s3 = max(0, (int(data['ques3']) - 1)/4)
+        s5 = max(0, (int(data['ques5']) - 1)/6)
+        s7 = max(0, (int(data['ques7']) - 1)/6)
+        s9 = max(0, (int(data['ques9']) - 1)/4)
+
+        symptom_freq = (s3+s5+s7+s9)/cnt
+
+    cnt = 0
+    if  int(data['ques4']) != 0 or int(data['ques6']) != 0 or int(data['ques8']) != 0:
+        if int(data['ques4']) == 6:
+            data['ques4'] = 5
+        if int(data['ques6']) == 6:
+            data['ques6'] = 5
+        if int(data['ques8']) == 6:
+            data['ques8'] = 5
+
+        for ques in ['ques4', 'ques6', 'ques6']:
+            if int(data[ques]) != 0:
+                cnt += 1
+
+        symptom_burden = 100 * ((int(data['ques8']) + int(data['ques4']) + data['ques6'])/cnt - 1)/4
+
+    total_symptom_score = (symptom_burden + symptom_freq) / 2
+
+    cnt = 0
+    if int(data['ques10']) != 0 or int(data['ques11']) != 0:
+        for ques in ['ques11', 'ques10']:
+            if int(data[ques]) != 0:
+                cnt += 1
+
+        self_efficacy = 100 * ((int(data['ques10']) + int(data['ques11']))/cnt - 1)/4
+    
+
+    if  int(data['ques12']) != 0 or int(data['ques13']) != 0 or int(data['ques14']) != 0:
+        for ques in ['ques12', 'ques13', 'ques14']:
+            if int(data[ques]) != 0:
+                cnt += 1
+
+        quality_of_life = 100 * ((int(data['ques12']) + int(data['ques13']) + data['ques14'])/cnt - 1)/4
+
+    cnt = 0
+    temp = 0
+    for ques in ['ques15_a', 'ques15_b', 'ques15_c' ,'ques15_d']:
+        if int(data[ques]) != 0: 
+            cnt += 1
+        temp += int(data[ques])
+
+    if cnt > 0:
+        social_limitation = 100 * ((temp / cnt) - 1)/4
+
+    overall_summary_score = (physical_limitation + total_symptom_score + quality_of_life + social_limitation) / 4
+    cilinical_summary_score = (physical_limitation + total_symptom_score) / 2
+
+    kccq_s = {
+        "physical_limitation" : physical_limitation,
+        "symptom_stability" : symptom_stability,
+        "symptom_freq" : symptom_freq,
+        "symptom_burden" : symptom_burden,
+        "total_symptom_score" : total_symptom_score,
+        "self_efficacy" : self_efficacy,
+        "quality_of_life" : quality_of_life,
+        "social_limitation" : social_limitation,
+        "overall_summary_score" : overall_summary_score,
+        "cilinical_summary_score" : cilinical_summary_score
+    }
+    result = ""
+    for x in kccq_s:
+        result += x + " : " +  str(kccq_s[x]) + "\n"
+    
+    p = Patient.objects.get(pk=int(data['patient']))
+    d_id = p.doctor.device.device_id
+    p_id = p.device.device_id
+    send_message(d_id, None, result)
+    patient_message = result 
+    print(patient_message)
+    send_message(p_id, None, result)
+
+    result_doc = p.name + " \n\n" + result
+     
+    Notifications(text=result_doc, doctor=p.doctor).save()
+    Notifications(text=result, patient=p).save()
+
+    return result
