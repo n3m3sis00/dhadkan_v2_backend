@@ -20,6 +20,8 @@ from rest_framework import status
 from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ, notify_doc
 from cvd_portal.fcm_d import send_message
 
+from dhadkan.opt import send_otp_msg
+
 from random import randint
 from .inform import send_abcd_notification
 from datetime import datetime
@@ -402,7 +404,8 @@ class gen_otp(APIView):
             o = OTP(otp=otp, user_type="Patient", user_type_id=p.id, user=u)
             o.save()
             response['otp_id'] = o.id
-            send_message(p.device.device_id, None, str(otp))
+            res_ = send_otp_msg(p.mobile, otp)
+            # send_message(p.device.device_id, None, str(otp))
             return JsonResponse(
                 response,
                 safe=False, content_type='application/json')
@@ -412,10 +415,12 @@ class gen_otp(APIView):
             o = OTP(otp=otp, user_type="Doctor", user_type_id=d.id, user=u)
             o.save()
             response['otp_id'] = o.id
-            send_message(d.device.device_id, None, str(otp))
+            res_ = send_otp_msg(d.mobile, otp)
+
             return JsonResponse(
                 response,
                 safe=False, content_type='application/json')
+                
         response['message'] = "Not Registered"
         return JsonResponse(
             response,
