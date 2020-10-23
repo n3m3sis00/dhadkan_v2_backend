@@ -17,7 +17,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ
+from cvd_portal.inform import check, send_ocr_notification, send_email_support, checkKCCQ, notify_doc
 from cvd_portal.fcm_d import send_message
 
 from random import randint
@@ -71,6 +71,10 @@ class PatientImageCreate(generics.CreateAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     serializer_class = PatientImageSerializer
+
+    def post(self, request):
+        notify_doc(request.data)
+        return super().post(request)
 
 
 class PatientDetail(generics.RetrieveUpdateDestroyAPIView):
