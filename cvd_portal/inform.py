@@ -1,3 +1,5 @@
+from django.core.mail import send_mail
+
 from cvd_portal.models import Patient, PatientData, Notifications
 from cvd_portal.fcm_d import send_message
 import datetime
@@ -285,3 +287,12 @@ def send_abcd_notification(data,mobile):
         send_message(p_id, None, patient_message)
         Notifications(text=patient_message, doctor=p.doctor).save()
         Notifications(text=patient_message, patient=p).save()
+
+
+## Support Email
+def send_email_support(msg, user):
+    print("Sending MSG")
+    message = user.name + "\n\n" + msg
+    print(message)
+    send_mail('Dhadkan Report', message, 'noreply@dhadkan.co', ['durgesh123.iitr@gmail.com'], fail_silently=False)
+    return 

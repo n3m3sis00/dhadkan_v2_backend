@@ -59,6 +59,19 @@ class Image(models.Model):
     def __str__(self):
         return self.patient.name + ' ' + str(self.time_stamp)
 
+class Report(models.Model):
+    msg = models.TextField()
+    patient = models.ForeignKey(
+        Patient, null=True, blank=True)
+    doctor = models.ForeignKey(
+        Doctor, null=True, blank=True)
+    time_stamp = CustomDateTimeField(default=datetime.datetime.now)
+
+    def __str__(self):
+        if(self.patient is None):
+            return self.doctor.name + " : " + self.msg
+        else:
+            return self.patient.name + " : " + self.msg
 
 class PatientData(models.Model):
     patient = models.ForeignKey(Patient, related_name='data')

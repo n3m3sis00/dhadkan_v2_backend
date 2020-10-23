@@ -17,7 +17,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from cvd_portal.inform import check, send_ocr_notification
+from cvd_portal.inform import check, send_ocr_notification, send_email_support
 from cvd_portal.fcm_d import send_message
 
 from random import randint
@@ -524,6 +524,40 @@ class Ocr(APIView):
 
         except:
             return JsonResponse({"message": "Image may not have any extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
+
+class Report(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    
+    def post(self,request, format=None):
+        try:
+            data = request.data
+            print(data)
+        except ParseError as error:
+            return Response(
+                'Invalid JSON - {0}'.format(error.detail),
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        # try:
+        msg = data['msg']
+        id_ = data['u_id']
+        type_ = data['type']
+        if(type_ == 'doctor'):
+            user = Doctor.objects.get(pk=int(id_))
+            # rep = Report(msg = msg, doctor=user)
+            # rep.save()
+            send_email_support(msg, user)
+        else:
+            user = Patient.objects.get(pk=int(id_))
+            # rep = Report(msg = msg, patient=user)
+            # rep.save()
+            send_email_support(msg, user)
+        
+
+        return JsonResponse({"message": "Your Msg has been sent to Developer"} , safe=False, content_type="application/json")
+
+        # except:
+        #     return JsonResponse({"message": "Something went wrong Please mail your query to compbio.iitr@gmail.com"} , safe=False, content_type="application/json") 
 
 class Classify(APIView):
 

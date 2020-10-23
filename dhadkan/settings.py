@@ -137,6 +137,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sandboxf78ae239adc64b859b6f69f92fa11600.mailgun.org'
+EMAIL_HOST_PASSWORD = 'Qr*Gj3YM}jGm,A--'
+EMAIL_USE_TLS = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
