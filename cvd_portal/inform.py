@@ -223,7 +223,7 @@ def get_parsed_ocr_results(data):
             message = "--------------------------------\nExtracted Name: \n--------------------------------\n" \
             + extracted_name + "\n--------------------------------\nExpected Name:\n--------------------------------\n" + expected_name  
             abcd = gen_abcd_message(found_med_name)
-            message += "\n------------\n" + abcd
+            message += "\n--------------------------------------------\n" + abcd
             print(message)       
 
             return True, message
@@ -244,7 +244,7 @@ def send_ocr_notification(mobile):
     ismessage, message = get_parsed_ocr_results(data_ocr_)
     print(ismessage, message)    
     print(p.name)
-    patient_noti = message + "\n\n" + "-------------------\n" + "\n".join(data_ocr_)
+    patient_noti = message + "\n" + "----------------------------------------------\n" + "\n".join(data_ocr_)
     doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
     if ismessage:
