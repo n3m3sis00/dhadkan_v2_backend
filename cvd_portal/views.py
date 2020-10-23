@@ -692,5 +692,5 @@ def reportview(request, pk):
     test_file = open('/app/pdfs/{}.pdf'.format(pk), 'rb')
     response = HttpResponse(content=test_file)
     response['Content-Type'] = 'application/pdf'
-    response['Content-Disposition'] = 'attachment; filename="{}.txt"'.format(pk)
+    response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(pk)
     return response
