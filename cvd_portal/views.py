@@ -374,8 +374,8 @@ class MedicineCRUD(APIView):
         p = Patient.objects.get(pk=p_id)
         msg = "Doctor has Prescribed " + data['med_name']
         
-        send_message(p.doctor.device.device_id, None, msg)
-        Medicine(text=msg, patient=p, doctor=p.doctor).save()
+        send_message(p.device.device_id, None, msg)
+        Medicine(text=data['med_name'], patient=p, doctor=p.doctor).save()
 
         return JsonResponse(
             response, safe=False, content_type='application/json')
