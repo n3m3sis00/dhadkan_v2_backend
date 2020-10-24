@@ -370,11 +370,11 @@ class MedicineCRUD(APIView):
         response = {}
         p_id = data['p_id']
         p = Patient.objects.get(pk=p_id)
-        msg = data['message']
-        _to = data['to']
-        _from = data['from']
-        response['response'] = send_message(_to, _from, msg)
-        Notifications(text=msg, patient=p).save()
+        msg = data['med_name']
+        
+        response['response'] = send_message(p.doctor.device.device_id, None, msg)
+        Medicine(text=msg, patient=p, doctor=p.doctor).save()
+
         return JsonResponse(
             response, safe=False, content_type='application/json')
 
@@ -497,6 +497,25 @@ class patient_notification(APIView):
             no["text"] = n.text
             no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
+        return JsonResponse(
+            response,
+            safe=False, content_type='application/json')
+
+class patient_med(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, pk, format=None):
+        p = Patient.objects.get(pk=pk)
+        nl = Medicine.objects.filter(patient=p).order_by('-time_stamp')
+        response = {
+            "medicine": []
+        }
+        for n in nl:
+            no = {"text": "", 'time_stamp': ""}
+            no["text"] = n.text
+            no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
+            response["medicine"].append(no)
         return JsonResponse(
             response,
             safe=False, content_type='application/json')

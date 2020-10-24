@@ -39,6 +39,11 @@ urlpatterns = [
     url(
         r'api/notification/doctor/(?P<pk>[0-9]+)$',
         doctor_notification.as_view()),
+        
+    url(r'api/medicine$', MedicineCRUD.as_view()),
+    url(
+        r'api/medicine/patient/(?P<pk>[0-9]+)$',
+        patient_med.as_view()),
 
     url(r'api/data2$', PatientData2Create.as_view()),
     url(r'api/downloadreport$', DownloadReport.as_view()),
