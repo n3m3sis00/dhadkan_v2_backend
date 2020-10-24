@@ -358,6 +358,8 @@ class NotificationCRUD(APIView):
 
 
 class MedicineCRUD(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
     def post(self, request, format=None):
         try:
             data = request.data
@@ -367,17 +369,32 @@ class MedicineCRUD(APIView):
                 'Invalid JSON - {0}'.format(error.detail),
                 status=status.HTTP_400_BAD_REQUEST
             )
-        response = {}
+        response = {"msg" : "success"}
         p_id = data['p_id']
         p = Patient.objects.get(pk=p_id)
-        msg = data['med_name']
+        msg = "Doctor has Prescribed " + data['med_name']
         
-        response['response'] = send_message(p.doctor.device.device_id, None, msg)
+        send_message(p.doctor.device.device_id, None, msg)
         Medicine(text=msg, patient=p, doctor=p.doctor).save()
 
         return JsonResponse(
             response, safe=False, content_type='application/json')
 
+class DelMedicine(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    def post(self, request, format=None):
+        try:
+            data = request.data
+        except ParseError:
+            return JsonResponse({"message":"please try agin"}, safe= False, content_type="application/json")
+
+
+        rem = Medicine.objects.get(pk = int(data["pk"]))
+        text = rem.text
+        rem.delete()
+        print("deleted", text)
+        return JsonResponse({"message":text}, safe=False, content_type = "application/json")
 
 
 class gen_otp(APIView):
