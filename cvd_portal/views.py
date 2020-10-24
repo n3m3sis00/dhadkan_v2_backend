@@ -374,7 +374,11 @@ class MedicineCRUD(APIView):
         p = Patient.objects.get(pk=p_id)
         msg = "Doctor has Prescribed " + data['med_name']
         
-        send_message(p.device.device_id, None, msg)
+        try:
+            send_message(p.device.device_id, None, msg)
+        except:
+            continue
+        
         Medicine(text=data['med_name'], patient=p, doctor=p.doctor).save()
 
         return JsonResponse(
