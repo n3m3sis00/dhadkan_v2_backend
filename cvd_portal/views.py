@@ -377,8 +377,8 @@ class MedicineCRUD(APIView):
         try:
             send_message(p.device.device_id, None, msg)
         except:
-            continue
-        
+            send_message(p.doctor.device_id, None, "{} ({}) is not active".format(p.name, p.mobile))
+
         Medicine(text=data['med_name'], patient=p, doctor=p.doctor).save()
 
         return JsonResponse(
