@@ -78,8 +78,8 @@ def check(request):
             send_message(d_id, None, doc_message)
             patient_message = "Please visit nearest OPD"
             send_message(p_id, None, patient_message)
-            Notifications(text=doc_message, doctor=p.doctor, isBot=True).save()
-            Notifications(text=patient_message, patient=p, isBot=True).save()
+            Notifications(text=doc_message, doctor=p.doctor).save()
+            Notifications(text=patient_message, patient=p).save()
 
 
 def gen_abcd_message(medicines):
