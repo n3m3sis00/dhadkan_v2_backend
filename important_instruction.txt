@@ -1,2 +1,4 @@
 check python runtime (3.6.0)
 check django version
+
+ python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e auth.Permission --indent 2 > dump.json
