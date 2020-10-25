@@ -516,6 +516,7 @@ class patient_notification(APIView):
         for n in nl:
             no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
+            no["isbot"] = n.isBot
             no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
         return JsonResponse(
@@ -555,6 +556,7 @@ class doctor_notification(APIView):
         for n in nl:
             no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
+            no["isbot"] = n.isBot
             no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
         return JsonResponse(
