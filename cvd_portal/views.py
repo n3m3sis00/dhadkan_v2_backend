@@ -352,7 +352,7 @@ class NotificationCRUD(APIView):
         _from = data['from']
         response['response'] = send_message(_to, _from, msg)
         times = timezone.now()
-        Notifications(text=msg,time_stamp=times, patient=p).save()
+        Notifications(text=msg,time_stamp=times, patient=p, isNOTBot=True).save()
         return JsonResponse(
             response, safe=False, content_type='application/json')
 
