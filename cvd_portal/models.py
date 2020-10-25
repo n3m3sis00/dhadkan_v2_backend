@@ -133,7 +133,7 @@ class Notifications(models.Model):
     doctor = models.ForeignKey(
         Doctor, null=True, blank=True)
     time_stamp = CustomDateTimeField(default=datetime.datetime.now)
-    isBot = models.BooleanField(default=False, blank=True)
+    isBot = models.BooleanField(default=True, blank=True)
 
     def __str__(self):
         if(self.patient is None):
