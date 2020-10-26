@@ -397,7 +397,7 @@ def checkKCCQ(data):
     }
     result = ""
     for x in kccq_s:
-        result += x + ": " +  str(round(kccq_s[x],2)) + "%\n"
+        result += x.replace("_", " ").capitalize() + ": " +  str(round(kccq_s[x],2)) + "%\n"
     
     p = Patient.objects.get(pk=int(data['patient']))
     d_id = p.doctor.device.device_id
