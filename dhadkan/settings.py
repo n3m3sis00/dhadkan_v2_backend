@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
     'rest_framework',
-    'cvd_portal'
+    'cvd_portal',
+    'import_export'
 ]
 
 SITE_ID = 1
