@@ -1,10 +1,11 @@
 from django.core.mail import send_mail
 
-from cvd_portal.models import Patient, PatientData, Notifications
+from cvd_portal.models import Patient, PatientData, Notifications, Image
 from cvd_portal.fcm_d import send_message
 import datetime
 import os
 from .ocr import ocr_space_file_
+from dhadkan.settings import BASE_DIR
 
 import difflib
 import base64
@@ -245,15 +246,16 @@ def send_ocr_notification(mobile, filename_):
     ismessage, message = get_parsed_ocr_results(data_ocr_)
     print(ismessage, message)    
     print(p.name)
-    patient_noti = message + "\n" + "----------------------------------------------\n" + "\n".join(data_ocr_)
+    patient_noti = message + "\n" + "---------------------------------------------\n" + "\n".join(data_ocr_)
     doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
     import base64
 
-    with open("/app/{}".format(filename_), "rb") as image_file:
+    with open(os.path.join(BASE_DIR, filename_), "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
 
-    im = Image(byte = encoded_string, patient=p).save()
+    im = Image(byte = encoded_string, patient=p)
+    im.save()
 
     if ismessage:
         send_message(d_id, None, doc_message)
@@ -266,7 +268,7 @@ def send_ocr_notification(mobile, filename_):
         send_message(d_id, None, doc_message)
         # send_message(p_id, None, patient_noti)
 
-    return patient_noti
+    return patient_noti, im.id
 
 def send_abcd_notification(data,mobile):
     timestamp_to = datetime.datetime.now() - datetime.timedelta(days=8)

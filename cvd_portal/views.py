@@ -31,6 +31,8 @@ from datetime import datetime
 from django.utils import timezone
 import pytz
 
+from dhadkan.settings import BASE_DIR
+
 
 
 class PatientDataCreate(generics.CreateAPIView):
@@ -567,22 +569,22 @@ class doctor_notification(APIView):
 
 class Ocr(APIView):
     def post(self,request, format=None):
-        try:
-            upload = request.FILES['photo']
-            extension =  upload.name.split(".")[1]
-            filename = "{}".format(upload.name)
-            mobile_ = request.POST['mobile']
+        # try:
+        upload = request.FILES['photo']
+        extension =  upload.name.split(".")[1]
+        filename = "photo.jpeg"
+        mobile_ = request.POST['mobile']
 
-            with open("/app/" + filename, 'wb+') as destination:
-                for chunk in upload.chunks():
-                    destination.write(chunk)
+        with open(os.path.join(BASE_DIR, filename), 'wb+') as destination:
+            for chunk in upload.chunks():
+                destination.write(chunk)
 
-            res_ = send_ocr_notification(mobile_, filename)
+        res_, id_ = send_ocr_notification(mobile_, filename)
 
-            return JsonResponse({"message": res_} , safe=False, content_type="application/json")
+        return JsonResponse({"message": res_, "image_id": id_} , safe=False, content_type="application/json")
 
-        except:
-            return JsonResponse({"message": "Image may not have any extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
+        # except:
+        #     return JsonResponse({"message": "Image may not have any extractable text or please try again after sometime"} , safe=False, content_type="application/json") 
 
 class Report(APIView):
     authentication_classes = (TokenAuthentication,)
