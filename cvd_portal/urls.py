@@ -37,6 +37,9 @@ urlpatterns = [
         r'api/notification/patient/(?P<pk>[0-9]+)$',
         patient_notification.as_view()),
     url(
+        r'api/get_notification/(?P<pk>[0-9]+)$',
+        get_notification.as_view()),
+    url(
         r'api/notification/doctor/(?P<pk>[0-9]+)$',
         doctor_notification.as_view()),
 

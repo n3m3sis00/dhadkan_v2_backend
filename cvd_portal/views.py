@@ -519,9 +519,38 @@ class patient_notification(APIView):
         for n in nl:
             no = {"text": "", 'time_stamp': ""}
             no["text"] = n.text
+            no["pk"] = n.id
             no["isNOTBot"] = n.isNOTBot
+            if n.image != None:
+                no['img_id'] = n.image.id
+            else:
+                no['img_id'] = -1
             no['time_stamp'] = n.time_stamp.strftime("%b %d,%Y (%H:%M)")
             response["notifications"].append(no)
+            print(no, flush=True)
+        return JsonResponse(
+            response,
+            safe=False, content_type='application/json')
+
+
+class get_notification(APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, pk, format=None):
+        n = Notifications.objects.get(pk=pk)
+        response = {
+            "img" : ""
+        }
+
+        if n.image != None:
+            if n.image.byte[0:4] != "data":
+                response['img'] = "data:image/png;base64," + n.image.byte
+            else:
+               response['img'] = n.image.byte 
+        else:
+            response['img'] = ""
+
         return JsonResponse(
             response,
             safe=False, content_type='application/json')
