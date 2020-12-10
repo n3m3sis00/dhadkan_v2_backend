@@ -7,6 +7,7 @@ import os
 from .ocr import ocr_space_file_
 
 import difflib
+import base64
 #change_observed = [False, False, False, False]
 
 
@@ -231,7 +232,7 @@ def get_parsed_ocr_results(data):
             print("hi from false")
             return False, "No Medicinal Information Found in submitted Image for OCR"
         
-def send_ocr_notification(mobile):
+def send_ocr_notification(mobile, filename_):
     print("hi from ocr notification")
     p = Patient.objects.get(mobile= int(mobile))
 
@@ -247,13 +248,20 @@ def send_ocr_notification(mobile):
     patient_noti = message + "\n" + "----------------------------------------------\n" + "\n".join(data_ocr_)
     doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
+    import base64
+
+    with open("/app/{}".format(filename_), "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+
+    im = Image(byte = encoded_string, patient=p).save()
+
     if ismessage:
         send_message(d_id, None, doc_message)
-        Notifications(text=doc_message, doctor=p.doctor).save()
-        Notifications(text=patient_noti, patient=p).save()
+        Notifications(text=doc_message, image = im, doctor=p.doctor).save()
+        Notifications(text=patient_noti,  image = im, patient=p).save()
     else:
-        Notifications(text=doc_message, doctor=p.doctor).save()
-        Notifications(text=patient_noti, patient=p).save()
+        Notifications(text=doc_message,  image = im, doctor=p.doctor).save()
+        Notifications(text=patient_noti,  image = im, patient=p).save()
 
         send_message(d_id, None, doc_message)
         # send_message(p_id, None, patient_noti)

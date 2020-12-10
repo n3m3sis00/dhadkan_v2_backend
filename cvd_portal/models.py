@@ -120,6 +120,7 @@ class Notifications(models.Model):
         Doctor, null=True, blank=True)
     time_stamp = CustomDateTimeField(default=datetime.datetime.now)
     isNOTBot = models.BooleanField(default=False, blank=True)
+    image = models.ForeignKey(Image, blank=True, null = True)
 
     def __str__(self):
         if(self.patient is None):

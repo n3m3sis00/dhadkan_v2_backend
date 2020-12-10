@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  server:
+    image: server_dhadkan
+    volumes:
+      - .:/app
+    port:
+      - 8000:8000

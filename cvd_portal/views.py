@@ -23,6 +23,7 @@ from cvd_portal.fcm_d import send_message
 from cvd_portal.genreport import genreport
 
 from dhadkan.opt import send_otp_msg
+from .models import Image
 
 from random import randint
 from .inform import send_abcd_notification
@@ -576,7 +577,7 @@ class Ocr(APIView):
                 for chunk in upload.chunks():
                     destination.write(chunk)
 
-            res_ = send_ocr_notification(mobile_)
+            res_ = send_ocr_notification(mobile_, filename)
 
             return JsonResponse({"message": res_} , safe=False, content_type="application/json")
 

@@ -19,3 +19,4 @@ dj_database_url
 twilio==6.46.0
 fpdf==1.7.2
 matplotlib==3.0.3
+django-import-export==0.6.0
