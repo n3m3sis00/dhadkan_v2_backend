@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 from fpdf import FPDF
 from random import randint
+from django.conf import settings
 
 from .models import *
 
@@ -15,37 +16,43 @@ def genreport(data):
 
     pdf = FPDF(format='letter')
     pdf.add_page()
-    pdf.set_font('Arial', 'B', 16)
-    pdf.cell(40, 10, 'Name: {}'.format(p.name))
-    pdf.cell(40, 20, 'Mobile: {}'.format(p.mobile))
-    pdf.cell(40, 30, 'Gender: {}'.format(p.gender))
-    pdf.cell(40, 40, 'Age: {}'.format(p.date_of_birth))
+    pdf.set_font('Arial', 'B', 12)
+    pdf.text(10, 10, 'Name: {}'.format(p.name))
+    pdf.text(10, 18, 'Mobile: {}'.format(p.mobile))
+    pdf.text(10, 26, 'Gender: {}'.format(p.gender))
+    pdf.text(10, 34, 'Age: {}'.format(p.date_of_birth))
+    pdf.image('/app/images/profile.png', x = 150, y = 10, w = 60, h = 60, type = '', link = '')
 
     ##creating and adding charts
-    data = [23, 45, 56, 78, 213]
-    plt.bar([1,2,3,4,5], data)
+    hr = []
+    sys = []
+    dia = []
+    wei = []
+
+    queryset = PatientData.objects.filter(patient=p)
+    for query in queryset:
+        hr.append(query.heart_rate)
+        sys.append(query.systolic)
+        dia.append(query.diastolic)
+        wei.append(query.weight)
+
+    plt.plot([x for x in range(len(hr))], hr)
+    # plt.savefig('hr.png')
+
+    plt.plot([x for x in range(len(hr))], sys)
+    # plt.savefig('sys.png')
+
+    plt.plot([x for x in range(len(hr))], dia)
+    # plt.savefig('dia.png')
+
+    plt.plot([x for x in range(len(hr))], wei)
     plt.savefig('chart.png')
 
-    pdf.image('chart.png', x = 0, y = 40, w = 100, h = 100, type = '', link = '')
+    pdf.image('chart.png', x = 0, y = 75, w = 220, h = 70, type = '', link = '')
+    # pdf.image('sys.png', x = 0, y = 150, w = 220, h = 70, type = '', link = '')
+    # pdf.image('dia.png', x = 0, y = 225, w = 220, h = 70, type = '', link = '')
+    # pdf.image('wei.png', x = 0, y = 300, w = 220, h = 70, type = '', link = '')
 
-
-    ## Data Table
-    data = [['First name','Last name','Age','City'],
-            ['Jules','Smith',34,'San Juan'],
-            ['Mary','Ramos',45,'Orlando'],[
-            'Carlson','Banks',19,'Los Angeles']
-            ]
-
-    epw = pdf.w - 2*pdf.l_margin
-    col_width = epw/4
-    pdf.ln(0.5)
-    
-    th = pdf.font_size
-    for row in data:
-        for datum in row:
-            pdf.cell(col_width, 2*th, str(datum), border=1)
-        pdf.ln(th)
-
-    pdf.output('/home/codespace/workspace/dhadkan_v3_backend/pdfs/{}.pdf'.format(name), 'F')
+    pdf.output('{}/pdfs/{}.pdf'.format(settings.BASE_DIR, name), 'F')
 
     return name

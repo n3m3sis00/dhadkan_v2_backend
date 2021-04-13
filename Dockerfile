@@ -7,3 +7,5 @@ RUN pip install -r requirements.txt
 COPY . .
 
 CMD ["/bin/bash"]
+
+EXPOSE 8000

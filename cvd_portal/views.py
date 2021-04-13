@@ -2,6 +2,7 @@ import os
 
 from cvd_portal.models import *
 from cvd_portal.serializers import *
+from django.conf import settings
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
@@ -22,7 +23,7 @@ from cvd_portal.inform import check, send_ocr_notification, send_email_support, 
 from cvd_portal.fcm_d import send_message
 from cvd_portal.genreport import genreport
 
-from dhadkan.opt import send_otp_msg
+from dhadkan.otp import send_otp_msg
 from .models import Image
 
 from random import randint
@@ -740,7 +741,7 @@ class DelReminder(APIView):
 
         return JsonResponse({"message":text}, safe=False, content_type = "application/json")
 
-class DownloadReport(APIView):
+class GenReport(APIView):
     # authentication_classes = (TokenAuthentication,)
     # permission_classes = (IsAuthenticated,)
 
@@ -754,8 +755,8 @@ class DownloadReport(APIView):
         #         status=status.HTTP_400_BAD_REQUEST
         #     )
         # try:
-        name = genreport(136)
-        return JsonResponse({"message": "Get you Report Here https://xyz.com/dhadkan/api/reportview/{}".format(name)} , safe=False, content_type="application/json")
+        name = genreport(2)
+        return JsonResponse("http://localhost:8000/dhadkan/api/reportview/{}".format(name) , safe=False, content_type="application/json")
 
         # except:
         #     return JsonResponse({"message": "something failed"} , safe=False, content_type="application/json") 
@@ -763,7 +764,7 @@ class DownloadReport(APIView):
 
 def reportview(request, pk):
     print(pk)
-    test_file = open('/home/codespace/workspace/dhadkan_v3_backend/pdfs/{}.pdf'.format(pk), 'rb')
+    test_file = open('{}/pdfs/{}.pdf'.format(settings.BASE_DIR, pk), 'rb')
     response = HttpResponse(content=test_file)
     response['Content-Type'] = 'application/pdf'
     response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(pk)
