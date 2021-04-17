@@ -95,7 +95,9 @@ def gen_abcd_message(medicines):
         'd':[]
     }
     medicine_ = MEDICINES
+    print(medicine_)
     for medicine in medicines:
+        medicine = medicine.replace(" ", "").lower()
         if list(medicine_.keys()).count(medicine) == 0:
             user_data['extra_med'].append(medicine)
 
@@ -344,7 +346,7 @@ def checkKCCQ(data):
     d_id = p.doctor.device.device_id
     p_id = p.device.device_id
 
-    result_doc = p.name + "has submitted KCCQ questionnaire \n\n" + result
+    result_doc = p.name + " has submitted KCCQ questionnaire \n\n" + result
     result_doc1 = p.name + " \n\n" + result
     send_message(d_id, None, result_doc) 
     patient_message = result 
