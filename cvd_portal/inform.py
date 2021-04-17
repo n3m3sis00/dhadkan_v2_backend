@@ -5,6 +5,7 @@ from cvd_portal.fcm_d import send_message
 import datetime
 import os
 from .ocr import ocr_space_file_
+from .medicines import MEDICINES
 from dhadkan.settings import BASE_DIR
 
 import difflib
@@ -93,80 +94,7 @@ def gen_abcd_message(medicines):
         'c':[],
         'd':[]
     }
-    medicine_ = {
-        
-	"apixaban" : "a" ,
-	"dabigatran" : "a",
-	"edoxaban" : "a",
-	"heparin" : "a",
-	"rivaroxaban" : "a",
-	"warfarin" : "a",
-	"aspirin" : "a",
-	"clopidogrel" : "a",
-	"dipyridamole" : "a",
-	"prasugrel" : "a",
-	"ticagrelor" : "a",
-	"benazepril" : "a",
-	"captopril" : "a",
-	"enalapril" : "a",
-	"fosinopril" : "a",
-	"lisinopril" : "a",
-	"moexipril" : "a",
-	"perindopril" : "a",
-	"quinapril" : "a",
-	"ramipril" : "a",
-	"trandolapril" : "a", 
-	"azilsartan" : "a",
-	"candesartan" : "a",
-	"eprosartan" : "a",
-	"irbesartan" : "a",
-	"losartan" : "a",
-	"olmesartan" : "a", 
-	"telmisartan" : "a", 
-	"valsartan" : "a", 
-	"sacubitril" : "a",
-	"acebutolol" : "b",
-	"atenolol" : "b",
-	"betaxolol" : "b",
-	"hydrochlorothiazide" : "b",
-	"bisoprolol" : "b",
-	"metoprolol" : "b",
-	"nadolol" : "b",
-	"propranolol" : "b",
-	"sotalol" : "b",
-	"carvedilol" : "b",
-	"labetalol hydrochloride" : "b",
-	"amlodipine" : "c",
-	"diltiazem" : "c",
-	"felodipine" : "c",
-	"nifedipine"  : "c",
-	"nimodipine" : "c",
-	"nisoldipine" : "c",
-	"verapamil" : "c",
-	"atorvastatin" : "c",
-	"fluvastatin" : "c", 
-	"lovastatin" : "c", 
-	"pitavastatin" : "c", 
-	"pravastatin" : "c",
-	"rosuvastatin" : "c", 
-	"simvastatin" : "c",
-	"niacin" : "c",
-	"ezetimibe" : "c", 
-	"ezetimibe" : "c",
-	"simvastatin" : "c", 
-	"digoxin" : "d",
-	"acetazolamide" : "d",
-	"amiloride" : "d",
-	"bumetanide" : "d",
-	"chlorothiazide" : "d",
-	"chlorthalidone" : "d",
-	"furosemide" : "d",
-	"hydro chlorothiazide" : "d",
-	"indapamide" : "d", 
-	"metalozone" : "d",
-	"spironolactone" : "d",
-	"torsemide" : "d"
-    }
+    medicine_ = MEDICINES
     for medicine in medicines:
         if list(medicine_.keys()).count(medicine) == 0:
             user_data['extra_med'].append(medicine)
@@ -415,14 +343,18 @@ def checkKCCQ(data):
     p = Patient.objects.get(pk=int(data['patient']))
     d_id = p.doctor.device.device_id
     p_id = p.device.device_id
-    send_message(d_id, None, result)
+
+    result_doc = p.name + "has submitted KCCQ questionnaire \n\n" + result
+    result_doc1 = p.name + " \n\n" + result
+    send_message(d_id, None, result_doc) 
     patient_message = result 
     print(patient_message)
+    
     send_message(p_id, None, result)
 
-    result_doc = p.name + " \n\n" + result
+    
      
-    Notifications(text=result_doc, doctor=p.doctor).save()
+    Notifications(text=result_doc1, doctor=p.doctor).save()
     Notifications(text=result, patient=p).save()
 
     return result
