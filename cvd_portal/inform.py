@@ -246,7 +246,7 @@ def send_ocr_notification(mobile, filename_):
     ismessage, message = get_parsed_ocr_results(data_ocr_)
     print(ismessage, message)    
     print(p.name)
-    patient_noti = message + "\n" + "---------------------------------------------\n" + "\n".join(data_ocr_)
+    patient_noti = message
     doc_message = p.name + " has submitted an OCR Request\n\n" + patient_noti
 
     import base64
