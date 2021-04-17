@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'dhadkan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-
+DATABASES = {}
 
 PROD = os.environ.get("PROD")
 if PROD:
