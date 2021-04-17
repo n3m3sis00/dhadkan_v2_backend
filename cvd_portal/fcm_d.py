@@ -22,12 +22,12 @@ def _get_access_token():
 def send_message(_to, _from, message):
     body = {"message":{'token': _to, 'notification': {"title":"Dhadkan", "body": message}}}
     body = json.dumps(body).encode('utf8')
-    # headers = {
-    #     'content-type': 'application/json',
-    #     'Authorization': 'Bearer ' + _get_access_token()
-    #     }
-    # r = requests.post(url, data=body, headers=headers)
-    # print(r.text)
+    headers = {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + _get_access_token()
+        }
+    r = requests.post(url, data=body, headers=headers)
+    print(r.text)
 
     return "Message Sent"
 
