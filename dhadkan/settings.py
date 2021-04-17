@@ -95,21 +95,23 @@ WSGI_APPLICATION = 'dhadkan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ["DATABASE_NAME"],
-        'USER': os.environ["DATABASE_USER"],
-        'PASSWORD': os.environ["DATABASE_PASSWORD"],
-        'HOST': os.environ["DATABASE_HOST"],
-        'PORT': os.environ["DATABASE_PORT"],
 
-    }
-}
 
-TESTING = os.environ.get("TESTING")
-if not TESTING:
+PROD = os.environ.get("PROD")
+if PROD:
     DATABASES['default'] = dj_database_url.config()
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ["DATABASE_NAME"],
+            'USER': os.environ["DATABASE_USER"],
+            'PASSWORD': os.environ["DATABASE_PASSWORD"],
+            'HOST': os.environ["DATABASE_HOST"],
+            'PORT': os.environ["DATABASE_PORT"],
+
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -155,5 +157,5 @@ EMAIL_HOST_PASSWORD = '2a0ca713d9d9bb3cbc4d79c26a73f867-53c13666-fd56cdb1'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-if not TESTING:
+if PROD:
     django_heroku.settings(locals())
