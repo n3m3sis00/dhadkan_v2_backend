@@ -1,5 +1,5 @@
 MEDICINES = {
-    "remdesivir" "a",
+    "remdesivir": "a",
 	"apixaban" : "a" ,
 	"dabigatran" : "a",
 	"edoxaban" : "a",
