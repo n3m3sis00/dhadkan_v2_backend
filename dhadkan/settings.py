@@ -98,20 +98,18 @@ WSGI_APPLICATION = 'dhadkan.wsgi.application'
 DATABASES = {}
 
 PROD = os.environ.get("PROD")
-if PROD:
-    DATABASES['default'] = dj_database_url.config()
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ["DATABASE_NAME"],
-            'USER': os.environ["DATABASE_USER"],
-            'PASSWORD': os.environ["DATABASE_PASSWORD"],
-            'HOST': os.environ["DATABASE_HOST"],
-            'PORT': os.environ["DATABASE_PORT"],
 
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dhadkan',
+        'USER': 'dhadkan',
+        'PASSWORD': 'AVNS_gshp8tmRiVEsPG9WCIc',
+        'HOST': 'db-postgresql-do-user-12710816-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
+
     }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
